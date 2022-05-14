@@ -22,6 +22,33 @@
     "main main main"
     "footer footer footer";
 }
+button {
+  border: .25em solid #d7cdb3;
+  padding: 0.75em 2em;
+  color: #d7cdb3;
+  font-family: "Poiret One";
+  font-size: 15px;
+  font-weight: bold;
+  background-color: #000000;
+  border-radius: 1em;
+  outline: none;
+  box-shadow:0 0 5px #d7cdb3, 0 0 15px #d7cdb3, 0 0 30px #d7cdb3, 0 0 50px #d7cdb3;
+  text-shadow: 0 0 .5em #d7cdb3;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+button:hover {
+  color: #FFFFFF;
+  border: .25em solid #FFFFFF;
+  background-color: #000000;
+  box-shadow: 0 0 5px #FFFFFF, 0 0 15px #FFFFFF, 0 0 30px #FFFFFF, 0 0 50px #FFFFFF;
+  text-shadow: 0 0 .5em #FFFFFF;
+}
+form> button{
+  margin-top: 0.75em;
+  padding: 0.75em 1.5em;
+  font-size: 13px;
+}
 /*header y navbar*/
 .header {
   width: 100%;
