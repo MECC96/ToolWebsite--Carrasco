@@ -403,7 +403,15 @@ form> button{
 }
 /*fin seccion merch*/
 /*seccion media queries*/
-/* Extra small devices (phones, 600px and down) */
+/*Laptop*/
+@media only screen and (max-width: 1366px){
+  .grid__music{
+    display: flex;
+    flex-direction: column;
+    gap: 15em;
+  }
+}
+/* tablets and smartphones */
 @media only screen and (max-width: 768px) {
   .container {
     grid-template-columns: 1fr;
