@@ -29,6 +29,7 @@ button {
   font-family: "Poiret One";
   font-size: 15px;
   font-weight: bold;
+  letter-spacing: 0.1em;
   background-color: #000000;
   border-radius: 1em;
   outline: none;
