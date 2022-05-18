@@ -67,6 +67,9 @@ form > .btn {
 .navbar-toggler {
   border: none;
 }
+#selected {
+  color: #ffffff;
+}
 /*fin de barra de navegacion*/
 /*comienzo de footer*/
 .footer {
@@ -213,7 +216,7 @@ form > .btn {
   text-shadow: 0 0 5px #000, 0 0 15px #000, 0 0 30px #000, 0 0 50px #000;
 }
 .city {
-  min-width: 200px;
+  width: 450px;
   height: 12em;
   display: flex;
   flex-direction: column;
@@ -241,6 +244,7 @@ form > .btn {
   background-repeat: no-repeat;
 }
 .date {
+  width: 450px;
   height: 12em;
   display: flex;
   flex-direction: column;
@@ -251,40 +255,14 @@ form > .btn {
 }
 /*seccion music*/
 .grid__music {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(6, 1fr);
-  grid-template-areas:
-    "opiate  ."
-    ".   undertow"
-    "aenima  ."
-    ". lateralus"
-    "days  ."
-    ".  fear";
-  gap: 10em;
+  gap: 5em 0;
 }
 .disc {
-  display: flex;
-  gap: 10em;
+  margin-right: 5em;
+  width: 90%;
+  gap: 5em;
 }
-.opiate {
-  grid-area: opiate;
-}
-.undertow {
-  grid-area: undertow;
-}
-.aenima {
-  grid-area: aenima;
-}
-.lateralus {
-  grid-area: lateralus;
-}
-.days {
-  grid-area: days;
-}
-.fear {
-  grid-area: fear;
-}
+
 .disc .seccion__iframe iframe {
   width: 18.5em;
   height: 18.5em;
@@ -299,11 +277,6 @@ form > .btn {
 }
 /*fin seccion music*/
 /*seccion merch*/
-.flex__merch {
-  display: flex;
-  justify-content: space-evenly;
-  gap: 5em;
-}
 .div__merch {
   display: flex;
   flex-direction: column;
@@ -317,93 +290,24 @@ form > .btn {
 }
 /*fin seccion merch*/
 /*seccion media queries*/
-/*Laptop*/
-@media only screen and (max-width: 1366px) {
-  .grid__music {
-    display: flex;
-    flex-direction: column;
-    gap: 15em;
-  }
-}
-/* tablets and smartphones */
+/*tablet y smartphone*/
 @media only screen and (max-width: 768px) {
-  .container {
-    grid-template-columns: 1fr;
-    grid-template-areas:
-      "header"
-      "main"
-      "footer";
-  }
-  .seccion__titulo,
-  h1 {
-    font-size: 1.5em;
-    text-align: center;
-  }
-  /*navbar*/
-  .navBar {
-    height: 22.6vmax;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    font-size: 2.6vw;
-    padding: 1vw;
-  }
-  .containerLogo img {
-    height: 100%;
-    width: 30vw;
-  }
-  .list li,
-  .list li a {
-    text-align: center;
-    width: 20vw;
-  }
-  /*fin navbar*/
-  .main {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  .seccion__img {
-    font-size: 1em;
-  }
-  .seccion__banda,
-  .seccion__iframe,
-  .seccion__community {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  .seccion__img {
-    width: 75vw;
-    padding-bottom: 1em;
-  }
-  .seccion__parrafo {
-    text-align: justify;
-    font-size: 1.1em;
-    width: 75vw;
-  }
   .footer {
     font-size: 0.6em;
   }
-  .form {
-    font-size: 0.75em;
-  }
-  .grid {
-    grid-template-columns: repeat(1, 1fr);
-  }
-  .seccion {
-    flex-direction: column;
-  }
-  /*seccion music*/
-  .grid__music {
-    display: flex;
-    flex-direction: column;
-  }
-  .seccion__cover {
+  .seccion__cover img {
     display: none;
   }
-  /*seccion merch*/
-  .flex__merch {
-    flex-direction: column;
+}
+@media only screen and (max-width: 576px) {
+  .seccion__cover img {
+    display: none;
+  }
+  .grid {
+    display: flex;
+    justify-content: center;
+  }
+  .footer {
+    font-size: 0.6em;
   }
 }
