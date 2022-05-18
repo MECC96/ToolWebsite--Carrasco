@@ -187,9 +187,6 @@ form > .btn {
   box-shadow: 0px 0px 15px white;
 }
 /*seccion galeria*/
-/* .grid {
-  width: 100%;
-} */
 .gridImg {
   display: flex;
   justify-content: center;
@@ -216,12 +213,14 @@ form > .btn {
   text-shadow: 0 0 5px #000, 0 0 15px #000, 0 0 30px #000, 0 0 50px #000;
 }
 .city {
+  min-width: 200px;
   height: 12em;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   box-shadow: 0px 0px 15px white;
+  border-radius: 0.5em;
 }
 .flagGB {
   background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTAlm9ol2RhbVfuuqE8o5tyysEI0ykFodKdTg&usqp=CAU);
@@ -248,6 +247,7 @@ form > .btn {
   justify-content: center;
   align-items: center;
   box-shadow: 0px 0px 15px white;
+  border-radius: 0.5em;
 }
 /*seccion music*/
 .grid__music {
