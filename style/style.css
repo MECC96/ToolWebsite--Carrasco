@@ -5,25 +5,8 @@
   text-decoration: none;
   list-style: none;
 }
-/*comienzo contenedor grid*/
-.container {
-  width: 100%;
-  background-image: url(../images/fondo.jpg);
-  background-size: 100%;
-  color: #ffffff;
-  display: grid;
-  grid-template-columns: repeat(3, auto);
-  grid-template-rows: repeat(4, auto);
-  grid-template-areas:
-    "header header header"
-    "main main main"
-    "main main main"
-    "main main main"
-    "main main main"
-    "footer footer footer";
-}
-button {
-  border: .25em solid #d7cdb3;
+.btn {
+  border: 0.25em solid #d7cdb3;
   padding: 0.75em 2em;
   color: #d7cdb3;
   font-family: "Poiret One";
@@ -33,94 +16,98 @@ button {
   background-color: #000000;
   border-radius: 1em;
   outline: none;
-  box-shadow:0 0 5px #d7cdb3, 0 0 15px #d7cdb3, 0 0 30px #d7cdb3, 0 0 50px #d7cdb3;
-  text-shadow: 0 0 .5em #d7cdb3;
+  box-shadow: 0 0 5px #d7cdb3, 0 0 15px #d7cdb3, 0 0 30px #d7cdb3,
+    0 0 50px #d7cdb3;
+  text-shadow: 0 0 0.5em #d7cdb3;
   transition: all 0.3s;
   cursor: pointer;
 }
-button:hover {
-  color: #FFFFFF;
-  border: .25em solid #FFFFFF;
+.btn:hover {
+  color: #ffffff;
+  border: 0.25em solid #ffffff;
   background-color: #000000;
-  box-shadow: 0 0 5px #FFFFFF, 0 0 15px #FFFFFF, 0 0 30px #FFFFFF, 0 0 50px #FFFFFF;
-  text-shadow: 0 0 .5em #FFFFFF;
+  box-shadow: 0 0 5px #ffffff, 0 0 15px #ffffff, 0 0 30px #ffffff,
+    0 0 50px #ffffff;
+  text-shadow: 0 0 0.5em #ffffff;
 }
-form> button{
+form > .btn {
   margin-top: 0.75em;
   padding: 0.75em 1.5em;
   font-size: 13px;
 }
-/*header y navbar*/
-.header {
-  width: 100%;
-  grid-area: header;
-}
-.navBar {
-  font-family: "Poiret One";
+.navbar {
   position: fixed;
   width: 100%;
-  height: 90px;
+  font-family: "Poiret One";
   background-color: #000;
-  opacity: 0.8;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  z-index: 100;
+  opacity: 0.6;
+  font-size: 1.2em;
+  grid-area: navBar;
 }
-.containerLogo {
-  width: 12.5em;
-  height: 100%;
-  margin: 0 4em;
+.navbar-brand {
+  width: 11vw;
+  height: 9.5vh;
+  margin: 0 2em;
   display: flex;
-  justify-content: center;
   align-items: center;
 }
-.containerLogo img {
-  width: 12.5em;
-  height: 100%;
+.logo {
+  width: 12em;
+  height: 6em;
 }
-.list {
-  padding: 0 3em;
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  text-transform: uppercase;
-}
-.list li {
-  display: flex;
-  justify-content: space-between;
+.navbar-nav {
   align-items: center;
 }
-.list li a {
-  padding: 0 2em;
-  color: rgba(255, 255, 255, 0.5);
-  font-size: 1.3em;
+.navbar-nav > .nav-item > .nav-link {
+  padding: 0.5em 2em;
+  color: rgba(255, 255, 255, 0.3);
+  font-size: 1.2em;
+  font-weight: bolder;
+}
+.navbar-toggler {
+  border: none;
+}
+/*fin de barra de navegacion*/
+/*comienzo de footer*/
+.footer {
+  width: 100%;
+  background-color: #1b1615;
+  color: #5b5350;
+  height: fit-content;
+  padding: 0.7em;
+  display: flex;
+  align-items: center;
+}
+.footer p {
+  margin-left: 2vw;
+  margin-bottom: 0;
+}
+.footer ul {
+  justify-content: space-around;
+  gap: 3vw;
+  margin-bottom: 0;
+}
+.footer ul a {
+  color: #5b5350;
+  text-decoration: none;
+}
+.footer .subList li a:hover,
+.footer p:hover {
+  color: #fff;
   transition: all 0.3s;
 }
-.list li a:hover,
-#selected {
-  color: #fff;
-}
-/*seccion main*/
+/*fin de footer*/
 .main {
+  background-image: url(../images/fondo.jpg);
+  background-position: center;
+  color: #fff;
+  background-color: #000;
   width: 100%;
-  display: grid;
-  grid-template-columns: repeat(2, auto);
-  grid-template-rows: repeat(4, auto);
-  grid-template-areas:
-    "gif gif"
-    "seccion__banda seccion__banda"
-    "seccion__iframe seccion__iframe"
-    "seccion__community seccion__community";
-  justify-items: center;
-  align-items: center;
-  gap: 3em 0;
-  padding-bottom: 5em;
-  grid-area: main;
+  display: flex;
+  flex-direction: column;
 }
-/*seccion gif*/
+/*comienzo gif*/
 .gif {
-  width: 100%;
   height: 100vh;
   background-image: url(../images/Humo.gif);
   background-position: center;
@@ -129,155 +116,90 @@ form> button{
   display: flex;
   justify-content: center;
   align-items: center;
-  grid-area: gif;
 }
 .gif h1 {
   font-family: "Poiret One";
-  font-weight: bolder;
+  font-weight: 900;
   font-size: 6.25em;
   text-transform: uppercase;
   color: #fff;
   text-shadow: 0 0 5px #d7cdb3, 0 0 15px #d7cdb3, 0 0 30px #d7cdb3,
     0 0 50px #d7cdb3;
 }
-/*seccion banda*/
-.seccion__banda {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(2, 1fr);
-  grid-template-areas:
-    "seccion__titulo seccion__titulo"
-    "seccion__img seccion__parrafo";
-  gap: 0 15em;
-  grid-area: seccion__banda;
+/*fin gif*/
+/*comienzo seccion banda*/
+.row {
+  gap: 3em;
 }
-.seccion__titulo {
-  font-family: "Poiret One";
-  font-size: 50px;
-  padding: 50px;
-  text-shadow: 0 0 5px red, 0 0 15px red, 0 0 30px red, 0 0 50px red;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  grid-area: seccion__titulo;
-}
-.seccion__img {
-  width: 31.25em;
-  display: flex;
-  align-items: center;
-  justify-self: right;
-  grid-area: seccion__img;
-}
-.seccion__img img {
-  border-radius: 0.6rem;
-  width: 100%;
-  box-shadow: 0 0 15px #ffffff;
-}
-.seccion__parrafo {
-  width: 75%;
-  font-size: larger;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 1rem;
-  grid-area: seccion__parrafo;
-}
-/*seccion iframe*/
-.seccion__iframe {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  grid-area: seccion__iframe;
-}
-.seccion__iframe .iframe {
-  width: 75%;
-  border-radius: 12px;
-  box-shadow: 0 0 15px #ffffff;
-}
-/*seccion community*/
-.seccion__community {
-  padding: 22px auto;
-  display: flex;
+.section__title > h2 {
   text-align: center;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  row-gap: 0.6em;
-  grid-area: seccion__community;
+  font-family: "Poiret One";
+  font-weight: 900;
+  font-size: 3.15em;
+  padding: 2em;
+  animation: flicker 1.5s infinite alternate;
+  color: #fff;
+}
+@keyframes flicker {
+  0%,
+  18%,
+  22%,
+  25%,
+  53%,
+  57%,
+  100% {
+    text-shadow: 0 0 4px #fff, 0 0 11px #fff, 0 0 19px #fff, 0 0 40px #f00,
+      0 0 80px #f00, 0 0 90px #f00, 0 0 100px #f00, 0 0 150px #f00;
+  }
+  20%,
+  24%,
+  55% {
+    text-shadow: none;
+  }
+}
+.band {
+  display: flex;
+  gap: 0.5em;
+}
+.band img {
+  border-radius: 1em;
+  box-shadow: 0 0 1em #ffffff;
+}
+.iframe {
+  border-radius: 1em;
+  box-shadow: 0 0 1em #ffffff;
+  padding: 0%;
+}
+.iframe > iframe {
+  border-radius: 1em;
+  height: 25em;
 }
 .form {
+  width: 50%;
   border: solid 1px #000;
-  border-radius: 3px;
+  border-radius: 1em;
   background: linear-gradient(90deg, #630302, #990000, #630302);
   color: #ffffff;
   font-size: 1.2em;
   padding: 20px;
+  margin-bottom: 3em;
   box-shadow: 0px 0px 15px white;
 }
-/*seccion footer*/
-.footer {
-  background-color: black;
-  color: #5b5350;
-  padding: 20px 0;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  grid-area: footer;
-}
-.footer p {
-  margin-left: 2vw;
-  transition: all 0.3s;
-}
-.footer ul {
-  margin-right: 2vw;
-  display: flex;
-  justify-content: space-around;
-  gap: 3vw;
-}
-.footer ul a {
-  color: #5b5350;
-  transition: all 0.3s;
-}
-.footer .subList li a:hover,
-.footer p:hover {
-  color: #fff;
-}
-/*seccion galery*/
-.main__galery {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(2, auto);
-  grid-template-areas:
-    "gif gif"
-    "bgImg bgImg";
-  justify-items: center;
-  align-items: center;
-  gap: 5em;
-  /* padding-bottom: 5em; */
-  grid-area: main;
-}
-.bgImg {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 6.25em;
-  grid-area: bgImg;
-}
+/*seccion galeria*/
 .grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 10vw;
-  padding: 2vw;
-  justify-items: center;
+  width: 100%;
+}
+.gridImg {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 3em;
 }
 .gridImg img {
   display: flex;
   justify-content: center;
   background: linear-gradient(90deg, #630302, #990000, #630302);
   border-radius: 0.5em;
-  box-shadow: 0 0 15px #ffffff;
+  box-shadow: 0 0 1em #ffffff;
   padding: 1em;
   transition: all 300ms;
   cursor: pointer;
@@ -404,8 +326,8 @@ form> button{
 /*fin seccion merch*/
 /*seccion media queries*/
 /*Laptop*/
-@media only screen and (max-width: 1366px){
-  .grid__music{
+@media only screen and (max-width: 1366px) {
+  .grid__music {
     display: flex;
     flex-direction: column;
     gap: 15em;
