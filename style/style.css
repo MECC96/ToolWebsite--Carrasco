@@ -193,6 +193,9 @@ form > .btn {
   margin-bottom: 3em;
   box-shadow: 0px 0px 15px white;
 }
+textarea {
+  max-height: 87px;
+}
 .focus:focus {
   outline: solid 2px #990000;
   box-shadow: 0px 0px 20px white;
