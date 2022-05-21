@@ -35,6 +35,37 @@ form > .btn {
   padding: 0.75em 1.5em;
   font-size: 13px;
 }
+.row {
+  --bs-gutter-x: 0;
+  gap: 3em;
+}
+.section__title > h2 {
+  text-align: center;
+  font-family: "Poiret One";
+  font-weight: 900;
+  font-size: 3.15em;
+  padding: 2em;
+  animation: flicker 1.5s infinite alternate;
+  color: #fff;
+}
+@keyframes flicker {
+  0%,
+  18%,
+  22%,
+  25%,
+  53%,
+  57%,
+  100% {
+    text-shadow: 0 0 4px #fff, 0 0 11px #fff, 0 0 19px #fff, 0 0 40px #f00,
+      0 0 80px #f00, 0 0 90px #f00, 0 0 100px #f00, 0 0 150px #f00;
+  }
+  20%,
+  24%,
+  55% {
+    text-shadow: none;
+  }
+}
+/*seccion navbar*/
 .navbar {
   position: fixed;
   width: 100%;
@@ -100,6 +131,7 @@ form > .btn {
   transition: all 0.3s;
 }
 /*fin de footer*/
+/*clase main*/
 .main {
   background-image: url(../images/fondo.jpg);
   background-position: center;
@@ -131,36 +163,6 @@ form > .btn {
 }
 /*fin gif*/
 /*comienzo seccion banda*/
-.row {
-  --bs-gutter-x: 0;
-  gap: 3em;
-}
-.section__title > h2 {
-  text-align: center;
-  font-family: "Poiret One";
-  font-weight: 900;
-  font-size: 3.15em;
-  padding: 2em;
-  animation: flicker 1.5s infinite alternate;
-  color: #fff;
-}
-@keyframes flicker {
-  0%,
-  18%,
-  22%,
-  25%,
-  53%,
-  57%,
-  100% {
-    text-shadow: 0 0 4px #fff, 0 0 11px #fff, 0 0 19px #fff, 0 0 40px #f00,
-      0 0 80px #f00, 0 0 90px #f00, 0 0 100px #f00, 0 0 150px #f00;
-  }
-  20%,
-  24%,
-  55% {
-    text-shadow: none;
-  }
-}
 .band {
   display: flex;
   gap: 0.5em;
@@ -179,7 +181,9 @@ form > .btn {
   height: 25em;
 }
 .form {
-  width: 50%;
+  max-width: 80%;
+  min-width: 50%;
+  max-height: 510px;
   border: solid 1px #000;
   border-radius: 1em;
   background: linear-gradient(90deg, #630302, #990000, #630302);
@@ -188,6 +192,10 @@ form > .btn {
   padding: 20px;
   margin-bottom: 3em;
   box-shadow: 0px 0px 15px white;
+}
+.focus:focus {
+  outline: solid 2px #990000;
+  box-shadow: 0px 0px 20px white;
 }
 /*seccion galeria*/
 .gridImg {
@@ -216,7 +224,7 @@ form > .btn {
   text-shadow: 0 0 5px #000, 0 0 15px #000, 0 0 30px #000, 0 0 50px #000;
 }
 .city {
-  width: 450px;
+  width: 28.125em;
   height: 12em;
   display: flex;
   flex-direction: column;
@@ -244,7 +252,7 @@ form > .btn {
   background-repeat: no-repeat;
 }
 .date {
-  width: 450px;
+  width: 28.125em;
   height: 12em;
   display: flex;
   flex-direction: column;
@@ -259,7 +267,7 @@ form > .btn {
 }
 .disc {
   margin-right: 5em;
-  width: 90%;
+  width: 95%;
   gap: 5em;
 }
 
@@ -282,32 +290,35 @@ form > .btn {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  text-align: justify;
+  text-align: left;
   gap: 1em;
 }
 .div__merch img {
+  width: 200px;
+  height: 200px;
   box-shadow: 0 0 15px #ffffff;
 }
 /*fin seccion merch*/
 /*seccion media queries*/
 /*tablet y smartphone*/
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 767px) {
+  .navbar {
+    opacity: 1;
+  }
   .footer {
     font-size: 0.6em;
+  }
+  .disc .seccion__iframe iframe {
+    width: 15em;
+    height: 15em;
   }
   .seccion__cover img {
     display: none;
   }
 }
-@media only screen and (max-width: 576px) {
-  .seccion__cover img {
-    display: none;
-  }
-  .grid {
-    display: flex;
-    justify-content: center;
-  }
-  .footer {
-    font-size: 0.6em;
+@media only screen and (max-width: 400px) {
+  .disc .seccion__iframe iframe {
+    width: 14em;
+    height: 14em;
   }
 }
