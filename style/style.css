@@ -289,16 +289,21 @@ textarea {
 /*fin seccion music*/
 /*seccion merch*/
 .div__merch {
+  width: min-content;
+  padding: 1em;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: left;
-  gap: 1em;
+  box-shadow: 0px 0px 15px white;
+  border-radius: 1em;
+  background: linear-gradient(90deg, #630302, #990000, #630302);
 }
 .div__merch img {
   width: 200px;
   height: 200px;
+  border-radius: 0.5em;
   box-shadow: 0 0 15px #ffffff;
 }
 /*fin seccion merch*/
