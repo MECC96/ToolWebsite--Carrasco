@@ -1,0 +1,25 @@
+/*seccion merch*/
+.div__merch {
+  width: min-content;
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: left;
+  box-shadow: 0px 0px 15px $white-color;
+  border-radius: 1em;
+  background: linear-gradient(
+    90deg,
+    $gradient-color,
+    $secondary-gradient-color,
+    $gradient-color
+  );
+  img {
+    width: 200px;
+    height: 200px;
+    border-radius: 0.5em;
+    box-shadow: 0 0 15px $white-color;
+  }
+}
+/*fin seccion merch*/

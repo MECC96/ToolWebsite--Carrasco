@@ -1,0 +1,43 @@
+/*seccion navbar*/
+.navbar {
+  position: fixed;
+  width: 100%;
+  font-family: $main-font;
+  background-color: $black-color;
+  opacity: 0.6;
+  font-size: 1.2em;
+  z-index: 100;
+
+  &-brand {
+    width: 11vw;
+    height: 9.5vh;
+    margin: 0 2em;
+    display: flex;
+    align-items: center;
+  }
+
+  .logo {
+    width: 12em;
+    height: 6em;
+  }
+
+  &-nav {
+    align-items: center;
+  }
+
+  &-nav > .nav-item > .nav-link {
+    padding: 0.5em 2em;
+    color: rgba(255, 255, 255, 0.3);
+    font-size: 1.2em;
+    font-weight: bolder;
+  }
+
+  &-toggler {
+    border: none;
+  }
+
+  #selected {
+    color: $white-color;
+  }
+}
+/*fin seccion navbar*/

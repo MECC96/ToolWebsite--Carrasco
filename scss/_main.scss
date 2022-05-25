@@ -1,0 +1,47 @@
+/*comienzo seccion banda*/
+.band {
+  display: flex;
+  gap: 0.5em;
+
+  img {
+    border-radius: 1em;
+    box-shadow: 0 0 1em $white-color;
+  }
+}
+/*seccion checkout*/
+.iframe {
+  border-radius: 1em;
+  box-shadow: 0 0 1em $white-color;
+  padding: 0%;
+
+  iframe {
+    border-radius: 1em;
+    height: 25em;
+  }
+}
+/*seccion community*/
+.form {
+  max-width: 80%;
+  min-width: 50%;
+  max-height: 510px;
+  border: solid 1px $black-color;
+  border-radius: 1em;
+  background: linear-gradient(
+    90deg,
+    $gradient-color,
+    $secondary-gradient-color,
+    $gradient-color
+  );
+  color: $white-color;
+  font-size: 1.2em;
+  padding: 20px;
+  margin-bottom: 3em;
+  box-shadow: 0px 0px 15px $white-color;
+}
+textarea {
+  max-height: 87px;
+}
+.focus:focus {
+  outline: solid 2px $secondary-gradient-color;
+  box-shadow: 0px 0px 20px $white-color;
+}

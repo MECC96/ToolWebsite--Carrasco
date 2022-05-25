@@ -1,0 +1,25 @@
+/*seccion music*/
+.grid__music {
+  gap: 5em 0;
+}
+.disc {
+  margin-right: 5em;
+  width: 95%;
+  gap: 5em;
+
+  .seccion__iframe iframe {
+    width: 18.5em;
+    height: 18.5em;
+    border-radius: 12px;
+    box-shadow: 0 0 15px $white-color;
+  }
+
+  .seccion__cover img {
+    width: 18.5em;
+    height: 18.5em;
+    box-shadow: 0px 0px 15px $white-color;
+    border-radius: 12px;
+  }
+}
+
+/*fin seccion music*/

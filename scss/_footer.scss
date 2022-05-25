@@ -1,0 +1,33 @@
+/*comienzo de footer*/
+.footer {
+  width: 100%;
+  background-color: #1b1615;
+  color: #5b5350;
+  height: fit-content;
+  padding: 0.7em;
+  display: flex;
+  align-items: center;
+
+  p {
+    margin-left: 2vw;
+    margin-bottom: 0;
+  }
+
+  ul {
+    justify-content: space-around;
+    gap: 3vw;
+    margin-bottom: 0;
+  }
+
+  & ul a {
+    color: #5b5350;
+    text-decoration: none;
+  }
+
+  & .subList li a:hover,
+  & p:hover {
+    color: $white-color;
+    transition: all 0.3s;
+  }
+}
+/*fin de footer*/

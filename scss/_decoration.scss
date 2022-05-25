@@ -1,0 +1,104 @@
+* {
+  margin: 0%;
+  padding: 0%;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+}
+.btn {
+  border: 0.25em solid $shadow-color;
+  padding: 0.75em 2em;
+  color: $shadow-color;
+  font-family: $main-font;
+  font-size: 15px;
+  font-weight: bold;
+  letter-spacing: 0.1em;
+  background-color: $black-color;
+  border-radius: 1em;
+  outline: none;
+  box-shadow: 0 0 5px $shadow-color, 0 0 15px $shadow-color,
+    0 0 30px $shadow-color, 0 0 50px $shadow-color;
+  text-shadow: 0 0 0.5em $shadow-color;
+  transition: all 0.3s;
+  cursor: pointer;
+
+  &:hover {
+    color: $white-color;
+    border: 0.25em solid $white-color;
+    background-color: $black-color;
+    box-shadow: 0 0 5px $white-color, 0 0 15px $white-color,
+      0 0 30px $white-color, 0 0 50px $white-color;
+    text-shadow: 0 0 0.5em $white-color;
+  }
+}
+form > .btn {
+  margin-top: 0.75em;
+  padding: 0.75em 1.5em;
+  font-size: 13px;
+}
+.row {
+  --bs-gutter-x: 0;
+  gap: 3em;
+}
+.section__title > h2 {
+  text-align: center;
+  font-family: $main-font;
+  font-weight: 900;
+  font-size: 3.15em;
+  padding: 2em;
+  animation: flicker 1.5s infinite alternate;
+  color: $white-color;
+
+  @keyframes flicker {
+    0%,
+    18%,
+    22%,
+    25%,
+    53%,
+    57%,
+    100% {
+      text-shadow: 0 0 4px $white-color, 0 0 11px $white-color,
+        0 0 19px $white-color, 0 0 40px $secondary-shadow-color,
+        0 0 80px $secondary-shadow-color, 0 0 90px $secondary-shadow-color,
+        0 0 100px $secondary-shadow-color, 0 0 150px $secondary-shadow-color;
+    }
+    20%,
+    24%,
+    55% {
+      text-shadow: none;
+    }
+  }
+}
+/*clase main*/
+.main {
+  background-image: url(../images/fondo.jpg);
+  background-position: center;
+  color: $white-color;
+  background-color: $black-color;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+/*comienzo gif*/
+.gif {
+  height: 100vh;
+  background-image: url(../images/Humo.gif);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  h1 {
+    font-family: $main-font;
+    font-weight: 900;
+    font-size: 6.25em;
+    text-transform: uppercase;
+    color: $white-color;
+    text-shadow: 0 0 5px $shadow-color, 0 0 15px $shadow-color,
+      0 0 30px $shadow-color, 0 0 50px $shadow-color;
+  }
+}
+
+/*fin gif*/

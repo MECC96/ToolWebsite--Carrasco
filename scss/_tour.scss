@@ -1,0 +1,51 @@
+/*seccion tour*/
+.city {
+  width: 28.125em;
+  height: 12em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0px 0px 15px $white-color;
+  border-radius: 0.5em;
+
+  p,
+  h2 {
+    text-shadow: 0 0 5px $black-color, 0 0 15px $black-color,
+      0 0 30px $black-color, 0 0 50px $black-color;
+  }
+}
+.flagGB {
+  background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTAlm9ol2RhbVfuuqE8o5tyysEI0ykFodKdTg&usqp=CAU);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.flagIR {
+  background-image: url(https://p4.wallpaperbetter.com/wallpaper/570/376/42/flag-ireland-wallpaper-preview.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.flagFR {
+  background-image: url(../images/brazil.png);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.date {
+  width: 28.125em;
+  height: 12em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0px 0px 15px $white-color;
+  border-radius: 0.5em;
+
+  p,
+  h2 {
+    text-shadow: 0 0 5px $black-color, 0 0 15px $black-color,
+      0 0 30px $black-color, 0 0 50px $black-color;
+  }
+}
