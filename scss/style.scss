@@ -1,5 +1,6 @@
 @import "./variables";
 @import "./fonts";
+@import "./responsive";
 @import "./decoration";
 @import "./header";
 @import "./main";
@@ -8,26 +9,3 @@
 @import "./galery";
 @import "./merch";
 @import "./footer";
-/*seccion media queries*/
-/*tablet y smartphone*/
-@media only screen and (max-width: 767px) {
-  .navbar {
-    opacity: 1;
-  }
-  .footer {
-    font-size: 0.6em;
-  }
-  .disc .seccion__iframe iframe {
-    width: 15em;
-    height: 15em;
-  }
-  .seccion__cover img {
-    display: none;
-  }
-}
-@media only screen and (max-width: 400px) {
-  .disc .seccion__iframe iframe {
-    width: 14em;
-    height: 14em;
-  }
-}

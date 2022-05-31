@@ -12,6 +12,15 @@
     height: 18.5em;
     border-radius: 12px;
     box-shadow: 0 0 15px $white-color;
+
+    @include responsive(tablet) {
+      width: 15em;
+      height: 15em;
+    }
+    @include responsive(smartphone) {
+      width: 140em;
+      height: 14em;
+    }
   }
 
   .seccion__cover img {
@@ -19,6 +28,10 @@
     height: 18.5em;
     box-shadow: 0px 0px 15px $white-color;
     border-radius: 12px;
+
+    @include responsive(tablet) {
+      display: none;
+    }
   }
 }
 

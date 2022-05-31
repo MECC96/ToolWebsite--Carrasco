@@ -29,5 +29,9 @@
     color: $white-color;
     transition: all 0.3s;
   }
+
+  @include responsive(tablet) {
+    font-size: 0.6em;
+  }
 }
 /*fin de footer*/

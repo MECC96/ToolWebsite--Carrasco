@@ -1,14 +1,17 @@
-/*imports*/
+/*fuente*/
 @import url("https://fonts.googleapis.com/css2?family=Poiret+One&display=swap");
 * {
   margin: 0%;
   padding: 0%;
   box-sizing: border-box;
   text-decoration: none;
-  list-style: none;
-}
+  list-style: none; }
 
-.btn {
+.row {
+  --bs-gutter-x: 0;
+  gap: 3em; }
+
+.btn, .btn__form {
   border: 0.25em solid #d7cdb3;
   padding: 0.75em 2em;
   color: #d7cdb3;
@@ -19,31 +22,21 @@
   background-color: #000000;
   border-radius: 1em;
   outline: none;
-  box-shadow: 0 0 5px #d7cdb3, 0 0 15px #d7cdb3, 0 0 30px #d7cdb3,
-    0 0 50px #d7cdb3;
+  box-shadow: 0 0 5px #d7cdb3, 0 0 15px #d7cdb3, 0 0 30px #d7cdb3, 0 0 50px #d7cdb3;
   text-shadow: 0 0 0.5em #d7cdb3;
   transition: all 0.3s;
-  cursor: pointer;
-}
-.btn:hover {
-  color: #ffffff;
-  border: 0.25em solid #ffffff;
-  background-color: #000000;
-  box-shadow: 0 0 5px #ffffff, 0 0 15px #ffffff, 0 0 30px #ffffff,
-    0 0 50px #ffffff;
-  text-shadow: 0 0 0.5em #ffffff;
-}
+  cursor: pointer; }
+  .btn:hover, .btn__form:hover {
+    color: #ffffff;
+    border: 0.25em solid #ffffff;
+    background-color: #000000;
+    box-shadow: 0 0 5px #ffffff, 0 0 15px #ffffff, 0 0 30px #ffffff, 0 0 50px #ffffff;
+    text-shadow: 0 0 0.5em #ffffff; }
 
-form > .btn {
-  margin-top: 0.75em;
-  padding: 0.75em 1.5em;
-  font-size: 13px;
-}
-
-.row {
-  --bs-gutter-x: 0;
-  gap: 3em;
-}
+.btn__form {
+  margin-top: 0.4em;
+  padding: 0.75em 2.5em;
+  font-size: 15px; }
 
 .section__title > h2 {
   text-align: center;
@@ -52,8 +45,7 @@ form > .btn {
   font-size: 3.15em;
   padding: 2em;
   animation: flicker 1.5s infinite alternate;
-  color: #ffffff;
-}
+  color: #ffffff; }
 
 @keyframes flicker {
   0%,
@@ -63,16 +55,11 @@ form > .btn {
   53%,
   57%,
   100% {
-    text-shadow: 0 0 4px #ffffff, 0 0 11px #ffffff, 0 0 19px #ffffff,
-      0 0 40px #ff0000, 0 0 80px #ff0000, 0 0 90px #ff0000, 0 0 100px #ff0000,
-      0 0 150px #ff0000;
-  }
+    text-shadow: 0 0 4px #ffffff, 0 0 11px #ffffff, 0 0 19px #ffffff, 0 0 40px #ff0000, 0 0 80px #ff0000, 0 0 90px #ff0000, 0 0 100px #ff0000, 0 0 150px #ff0000; }
   20%,
   24%,
   55% {
-    text-shadow: none;
-  }
-}
+    text-shadow: none; } }
 
 /*clase main*/
 .main {
@@ -82,8 +69,7 @@ form > .btn {
   background-color: #000000;
   width: 100%;
   display: flex;
-  flex-direction: column;
-}
+  flex-direction: column; }
 
 /*comienzo gif*/
 .gif {
@@ -94,77 +80,65 @@ form > .btn {
   background-repeat: no-repeat;
   display: flex;
   justify-content: center;
-  align-items: center;
-}
-.gif h1 {
-  font-family: "Poiret One", cursive;
-  font-weight: 900;
-  font-size: 6.25em;
-  text-transform: uppercase;
-  color: #ffffff;
-  text-shadow: 0 0 5px #d7cdb3, 0 0 15px #d7cdb3, 0 0 30px #d7cdb3,
-    0 0 50px #d7cdb3;
-}
+  align-items: center; }
+  .gif h1 {
+    font-family: "Poiret One", cursive;
+    font-weight: 900;
+    font-size: 6.25em;
+    text-transform: uppercase;
+    color: #ffffff;
+    text-shadow: 0 0 5px #d7cdb3, 0 0 15px #d7cdb3, 0 0 30px #d7cdb3, 0 0 50px #d7cdb3; }
 
-/*fin gif*/
 /*seccion navbar*/
 .navbar {
   position: fixed;
   width: 100%;
   font-family: "Poiret One", cursive;
   background-color: #000000;
-  opacity: 0.6;
+  opacity: 0.61;
   font-size: 1.2em;
-  z-index: 100;
-}
-.navbar-brand {
-  width: 11vw;
-  height: 9.5vh;
-  margin: 0 2em;
-  display: flex;
-  align-items: center;
-}
-.navbar .logo {
-  width: 12em;
-  height: 6em;
-}
-.navbar-nav {
-  align-items: center;
-}
-.navbar-nav > .nav-item > .nav-link {
-  padding: 0.5em 2em;
-  color: rgba(255, 255, 255, 0.3);
-  font-size: 1.2em;
-  font-weight: bolder;
-}
-.navbar-toggler {
-  border: none;
-}
-.navbar #selected {
-  color: #ffffff;
-}
+  z-index: 100; }
+  .navbar-brand {
+    width: 11vw;
+    height: 9.5vh;
+    margin: 0 2em;
+    display: flex;
+    align-items: center; }
+  .navbar .logo {
+    width: 12em;
+    height: 6em; }
+  .navbar-nav {
+    align-items: center; }
+  .navbar-nav > .nav-item > .nav-link {
+    padding: 0.5em 2em;
+    color: rgba(255, 255, 255, 0.3);
+    font-size: 1.2em;
+    font-weight: bolder; }
+  .navbar-toggler {
+    border: none; }
+  .navbar #selected {
+    color: #ffffff; }
+  @media (max-width: 767px) {
+    .navbar {
+      opacity: 1; } }
 
 /*fin seccion navbar*/
 /*comienzo seccion banda*/
 .band {
   display: flex;
-  gap: 0.5em;
-}
-.band img {
-  border-radius: 1em;
-  box-shadow: 0 0 1em #ffffff;
-}
+  gap: 0.5em; }
+  .band img {
+    border-radius: 1em;
+    box-shadow: 0 0 1em #ffffff; }
 
 /*seccion checkout*/
 .iframe {
   border-radius: 1em;
   box-shadow: 0 0 1em #ffffff;
-  padding: 0%;
-}
-.iframe iframe {
-  border-radius: 1em;
-  height: 25em;
-}
+  padding: 0%; }
+  .iframe iframe {
+    border-radius: 1em;
+    height: 25em; }
 
 /*seccion community*/
 .form {
@@ -178,17 +152,14 @@ form > .btn {
   font-size: 1.2em;
   padding: 20px;
   margin-bottom: 3em;
-  box-shadow: 0px 0px 15px #ffffff;
-}
+  box-shadow: 0px 0px 15px #ffffff; }
 
 textarea {
-  max-height: 87px;
-}
+  max-height: 88px; }
 
 .focus:focus {
   outline: solid 2px #990000;
-  box-shadow: 0px 0px 20px #ffffff;
-}
+  box-shadow: 0px 0px 20px #ffffff; }
 
 /*seccion tour*/
 .city {
@@ -199,34 +170,28 @@ textarea {
   justify-content: center;
   align-items: center;
   box-shadow: 0px 0px 15px #ffffff;
-  border-radius: 0.5em;
-}
-.city p,
-.city h2 {
-  text-shadow: 0 0 5px #000000, 0 0 15px #000000, 0 0 30px #000000,
-    0 0 50px #000000;
-}
+  border-radius: 0.51em; }
+  .city p,
+  .city h2 {
+    text-shadow: 0 0 5px #000000, 0 0 15px #000000, 0 0 30px #000000, 0 0 50px #000000; }
 
 .flagGB {
   background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTAlm9ol2RhbVfuuqE8o5tyysEI0ykFodKdTg&usqp=CAU);
   background-position: center;
   background-size: cover;
-  background-repeat: no-repeat;
-}
+  background-repeat: no-repeat; }
 
 .flagIR {
   background-image: url(https://p4.wallpaperbetter.com/wallpaper/570/376/42/flag-ireland-wallpaper-preview.jpg);
   background-position: center;
   background-size: cover;
-  background-repeat: no-repeat;
-}
+  background-repeat: no-repeat; }
 
 .flagFR {
   background-image: url(../images/brazil.png);
   background-position: center;
   background-size: cover;
-  background-repeat: no-repeat;
-}
+  background-repeat: no-repeat; }
 
 .date {
   width: 28.125em;
@@ -236,57 +201,58 @@ textarea {
   justify-content: center;
   align-items: center;
   box-shadow: 0px 0px 15px #ffffff;
-  border-radius: 0.5em;
-}
-.date p,
-.date h2 {
-  text-shadow: 0 0 5px #000000, 0 0 15px #000000, 0 0 30px #000000,
-    0 0 50px #000000;
-}
+  border-radius: 0.51em; }
+  .date p,
+  .date h2 {
+    text-shadow: 0 0 5px #000000, 0 0 15px #000000, 0 0 30px #000000, 0 0 50px #000000; }
 
 /*seccion music*/
 .grid__music {
-  gap: 5em 0;
-}
+  gap: 5em; }
 
 .disc {
   margin-right: 5em;
   width: 95%;
-  gap: 5em;
-}
-.disc .seccion__iframe iframe {
-  width: 18.5em;
-  height: 18.5em;
-  border-radius: 12px;
-  box-shadow: 0 0 15px #ffffff;
-}
-.disc .seccion__cover img {
-  width: 18.5em;
-  height: 18.5em;
-  box-shadow: 0px 0px 15px #ffffff;
-  border-radius: 12px;
-}
+  gap: 5em; }
+  .disc .seccion__iframe iframe {
+    width: 18.5em;
+    height: 18.5em;
+    border-radius: 12px;
+    box-shadow: 0 0 15px #ffffff; }
+    @media (max-width: 767px) {
+      .disc .seccion__iframe iframe {
+        width: 15em;
+        height: 15em; } }
+    @media (max-width: 400px) {
+      .disc .seccion__iframe iframe {
+        width: 140em;
+        height: 14em; } }
+  .disc .seccion__cover img {
+    width: 18.5em;
+    height: 18.5em;
+    box-shadow: 0px 0px 15px #ffffff;
+    border-radius: 12px; }
+    @media (max-width: 767px) {
+      .disc .seccion__cover img {
+        display: none; } }
 
 /*fin seccion music*/
 /*seccion galeria*/
 .gridImg {
   display: flex;
   justify-content: center;
-  margin-bottom: 3em;
-}
-.gridImg img {
-  display: flex;
-  justify-content: center;
-  background: linear-gradient(90deg, #630302, #990000, #630302);
-  border-radius: 0.5em;
-  box-shadow: 0 0 1em #ffffff;
-  padding: 1em;
-  transition: all 300ms;
-  cursor: pointer;
-}
-.gridImg img:hover {
-  transform: scale(1.15);
-}
+  margin-bottom: 3em; }
+  .gridImg img {
+    display: flex;
+    justify-content: center;
+    background: linear-gradient(90deg, #630302, #990000, #630302);
+    border-radius: 0.5em;
+    box-shadow: 0 0 1em #ffffff;
+    padding: 1em;
+    transition: all 300ms;
+    cursor: pointer; }
+    .gridImg img:hover {
+      transform: scale(1.16); }
 
 /*seccion merch*/
 .div__merch {
@@ -299,14 +265,12 @@ textarea {
   text-align: left;
   box-shadow: 0px 0px 15px #ffffff;
   border-radius: 1em;
-  background: linear-gradient(90deg, #630302, #990000, #630302);
-}
-.div__merch img {
-  width: 200px;
-  height: 200px;
-  border-radius: 0.5em;
-  box-shadow: 0 0 15px #ffffff;
-}
+  background: linear-gradient(90deg, #630302, #990000, #630302); }
+  .div__merch img {
+    width: 200px;
+    height: 200px;
+    border-radius: 0.51em;
+    box-shadow: 0 0 15px #ffffff; }
 
 /*fin seccion merch*/
 /*comienzo de footer*/
@@ -317,49 +281,23 @@ textarea {
   height: fit-content;
   padding: 0.7em;
   display: flex;
-  align-items: center;
-}
-.footer p {
-  margin-left: 2vw;
-  margin-bottom: 0;
-}
-.footer ul {
-  justify-content: space-around;
-  gap: 3vw;
-  margin-bottom: 0;
-}
-.footer ul a {
-  color: #5b5350;
-  text-decoration: none;
-}
-.footer .subList li a:hover,
-.footer p:hover {
-  color: #ffffff;
-  transition: all 0.3s;
-}
+  align-items: center; }
+  .footer p {
+    margin-left: 2vw;
+    margin-bottom: 0; }
+  .footer ul {
+    justify-content: space-around;
+    gap: 3vw;
+    margin-bottom: 0; }
+  .footer ul a {
+    color: #5b5350;
+    text-decoration: none; }
+  .footer .subList li a:hover,
+  .footer p:hover {
+    color: #ffffff;
+    transition: all 0.3s; }
+  @media (max-width: 767px) {
+    .footer {
+      font-size: 0.6em; } }
 
 /*fin de footer*/
-/*seccion media queries*/
-/*tablet y smartphone*/
-@media only screen and (max-width: 767px) {
-  .navbar {
-    opacity: 1;
-  }
-  .footer {
-    font-size: 0.6em;
-  }
-  .disc .seccion__iframe iframe {
-    width: 15em;
-    height: 15em;
-  }
-  .seccion__cover img {
-    display: none;
-  }
-}
-
-@media only screen and (max-width: 400px) {
-  .disc .seccion__iframe iframe {
-    width: 14em;
-    height: 14em;
-  }
-}

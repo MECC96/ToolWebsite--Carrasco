@@ -1,0 +1,14 @@
+//mixin responsive
+$tablet: 767px;
+$smartphone: 400px;
+@mixin responsive($medida) {
+  @if $medida == tablet {
+    @media (max-width: $tablet) {
+      @content;
+    }
+  } @else if $medida == smartphone {
+    @media (max-width: $smartphone) {
+      @content;
+    }
+  }
+}

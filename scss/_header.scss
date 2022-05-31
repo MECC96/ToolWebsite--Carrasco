@@ -39,5 +39,9 @@
   #selected {
     color: $white-color;
   }
+
+  @include responsive(tablet) {
+    opacity: 1;
+  }
 }
 /*fin seccion navbar*/

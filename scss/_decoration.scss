@@ -5,6 +5,10 @@
   text-decoration: none;
   list-style: none;
 }
+.row {
+  --bs-gutter-x: 0;
+  gap: 3em;
+}
 .btn {
   border: 0.25em solid $shadow-color;
   padding: 0.75em 2em;
@@ -31,43 +35,15 @@
     text-shadow: 0 0 0.5em $white-color;
   }
 }
-form > .btn {
-  margin-top: 0.75em;
-  padding: 0.75em 1.5em;
-  font-size: 13px;
+.btn__form {
+  @extend .btn;
+  margin-top: 0.4em;
+  padding: 0.75em 2.5em;
+  font-size: 15px;
 }
-.row {
-  --bs-gutter-x: 0;
-  gap: 3em;
-}
-.section__title > h2 {
-  text-align: center;
-  font-family: $main-font;
-  font-weight: 900;
-  font-size: 3.15em;
-  padding: 2em;
-  animation: flicker 1.5s infinite alternate;
-  color: $white-color;
 
-  @keyframes flicker {
-    0%,
-    18%,
-    22%,
-    25%,
-    53%,
-    57%,
-    100% {
-      text-shadow: 0 0 4px $white-color, 0 0 11px $white-color,
-        0 0 19px $white-color, 0 0 40px $secondary-shadow-color,
-        0 0 80px $secondary-shadow-color, 0 0 90px $secondary-shadow-color,
-        0 0 100px $secondary-shadow-color, 0 0 150px $secondary-shadow-color;
-    }
-    20%,
-    24%,
-    55% {
-      text-shadow: none;
-    }
-  }
+.section__title > h2 {
+  @include subtitle;
 }
 /*clase main*/
 .main {
