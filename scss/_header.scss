@@ -36,12 +36,9 @@
     border: none;
   }
 
-  #selected {
-    color: $white-color;
-  }
-
   @include responsive(tablet) {
     opacity: 1;
+    color: $white-color;
   }
 }
 /*fin seccion navbar*/

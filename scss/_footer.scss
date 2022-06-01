@@ -1,14 +1,14 @@
 /*comienzo de footer*/
 .footer {
   width: 100%;
-  background-color: $footer-color;
-  color: #5b5350;
+  background-color: $black-color;
   height: fit-content;
   padding: 0.7em;
   display: flex;
   align-items: center;
-
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
   p {
+    color: rgba(255, 255, 255, 0.6);
     margin-left: 2vw;
     margin-bottom: 0;
   }
@@ -20,7 +20,7 @@
   }
 
   & ul a {
-    color: #5b5350;
+    color: rgba(255, 255, 255, 0.6);
     text-decoration: none;
   }
 
@@ -31,7 +31,8 @@
   }
 
   @include responsive(tablet) {
-    font-size: 0.6em;
+    font-size: 0.75em;
+    color: $white-color;
   }
 }
 /*fin de footer*/

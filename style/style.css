@@ -116,11 +116,10 @@
     font-weight: bolder; }
   .navbar-toggler {
     border: none; }
-  .navbar #selected {
-    color: #ffffff; }
   @media (max-width: 767px) {
     .navbar {
-      opacity: 1; } }
+      opacity: 1;
+      color: #ffffff; } }
 
 /*fin seccion navbar*/
 /*comienzo seccion banda*/
@@ -162,7 +161,7 @@ textarea {
   box-shadow: 0px 0px 20px #ffffff; }
 
 /*seccion tour*/
-.city {
+.city, .date {
   width: 28.125em;
   height: 12em;
   display: flex;
@@ -171,40 +170,22 @@ textarea {
   align-items: center;
   box-shadow: 0px 0px 15px #ffffff;
   border-radius: 0.51em; }
-  .city p,
-  .city h2 {
+  .city p, .date p,
+  .city h2,
+  .date h2 {
     text-shadow: 0 0 5px #000000, 0 0 15px #000000, 0 0 30px #000000, 0 0 50px #000000; }
 
-.flagGB {
+.flagGB, .flagIR, .flagFR {
   background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTAlm9ol2RhbVfuuqE8o5tyysEI0ykFodKdTg&usqp=CAU);
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat; }
 
 .flagIR {
-  background-image: url(https://p4.wallpaperbetter.com/wallpaper/570/376/42/flag-ireland-wallpaper-preview.jpg);
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat; }
+  background-image: url(https://p4.wallpaperbetter.com/wallpaper/570/376/42/flag-ireland-wallpaper-preview.jpg); }
 
 .flagFR {
-  background-image: url(../images/brazil.png);
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat; }
-
-.date {
-  width: 28.125em;
-  height: 12em;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  box-shadow: 0px 0px 15px #ffffff;
-  border-radius: 0.51em; }
-  .date p,
-  .date h2 {
-    text-shadow: 0 0 5px #000000, 0 0 15px #000000, 0 0 30px #000000, 0 0 50px #000000; }
+  background-image: url(../images/brazil.png); }
 
 /*seccion music*/
 .grid__music {
@@ -225,7 +206,7 @@ textarea {
         height: 15em; } }
     @media (max-width: 400px) {
       .disc .seccion__iframe iframe {
-        width: 140em;
+        width: 14em;
         height: 14em; } }
   .disc .seccion__cover img {
     width: 18.5em;
@@ -276,13 +257,14 @@ textarea {
 /*comienzo de footer*/
 .footer {
   width: 100%;
-  background-color: #1b1615;
-  color: #5b5350;
+  background-color: #000000;
   height: fit-content;
   padding: 0.7em;
   display: flex;
-  align-items: center; }
+  align-items: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.3); }
   .footer p {
+    color: rgba(255, 255, 255, 0.6);
     margin-left: 2vw;
     margin-bottom: 0; }
   .footer ul {
@@ -290,7 +272,7 @@ textarea {
     gap: 3vw;
     margin-bottom: 0; }
   .footer ul a {
-    color: #5b5350;
+    color: rgba(255, 255, 255, 0.6);
     text-decoration: none; }
   .footer .subList li a:hover,
   .footer p:hover {
@@ -298,6 +280,7 @@ textarea {
     transition: all 0.3s; }
   @media (max-width: 767px) {
     .footer {
-      font-size: 0.6em; } }
+      font-size: 0.75em;
+      color: #ffffff; } }
 
 /*fin de footer*/
