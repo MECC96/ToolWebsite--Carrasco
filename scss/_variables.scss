@@ -6,6 +6,7 @@ $white-color: #ffffff; // sombras y letras
 $black-color: #000000; // sombras y bordes
 $footer-color: #1b1615; //color footer
 $main-font: "Poiret One", cursive; //fuente principal
+$text-font: "Exo 2", sans-serif; //fuente de textos
 //mixin de subtitulo
 @mixin subtitle() {
   text-align: center;
