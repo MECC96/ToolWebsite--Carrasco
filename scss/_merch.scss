@@ -6,20 +6,33 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  text-align: left;
+  text-align: center;
+  text-shadow: 0 0 5px $black-color, 0 0 15px $black-color,
+    0 0 30px $black-color, 0 0 50px $black-color;
   box-shadow: 0px 0px 15px $white-color;
   border-radius: 1em;
+  transition: all 300ms;
   background: linear-gradient(
     90deg,
     $gradient-color,
     $secondary-gradient-color,
     $gradient-color
   );
+  &:hover {
+    transform: scale(1.1);
+  }
   img {
     width: 200px;
     height: 200px;
     border-radius: 0.51em;
     box-shadow: 0 0 15px $white-color;
+  }
+  span {
+    margin-bottom: -5px;
+  }
+  p {
+    margin-top: 10px;
+    font-size: 25px;
   }
 }
 /*fin seccion merch*/
