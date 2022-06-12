@@ -7,6 +7,11 @@
     border-radius: 1em;
     box-shadow: 0 0 1em $white-color;
   }
+  * p {
+    @include responsive(smartphone) {
+      text-align: justify;
+    }
+  }
 }
 /*seccion checkout*/
 .iframe {

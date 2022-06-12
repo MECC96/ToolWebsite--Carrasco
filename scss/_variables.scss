@@ -13,10 +13,9 @@ $text-font: "Exo 2", sans-serif; //fuente de textos
   font-family: $main-font;
   font-weight: 900;
   font-size: 3.15em;
-  padding: 2em;
+  margin: 2em 0;
   animation: flicker 1.5s infinite alternate;
   color: $white-color;
-
   @keyframes flicker {
     0%,
     18%,

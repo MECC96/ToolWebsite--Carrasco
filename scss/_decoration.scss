@@ -68,9 +68,11 @@
   align-items: center;
 
   h1 {
+    text-align: center;
     font-family: $main-font;
     font-weight: 900;
     font-size: 6.25em;
+    letter-spacing: 6vw;
     text-transform: uppercase;
     color: $white-color;
     text-shadow: 0 0 5px $shadow-color, 0 0 15px $shadow-color,
