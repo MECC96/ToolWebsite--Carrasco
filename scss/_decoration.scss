@@ -21,9 +21,6 @@
   background-color: $black-color;
   border-radius: 1em;
   outline: none;
-  box-shadow: 0 0 5px $shadow-color, 0 0 15px $shadow-color,
-    0 0 30px $shadow-color, 0 0 50px $shadow-color;
-  text-shadow: 0 0 0.5em $shadow-color;
   transition: all 0.3s;
   cursor: pointer;
 
@@ -34,6 +31,11 @@
     box-shadow: 0 0 5px $white-color, 0 0 15px $white-color,
       0 0 30px $white-color, 0 0 50px $white-color;
     text-shadow: 0 0 0.5em $white-color;
+  }
+  &:active {
+    box-shadow: 0 0 20px $white-color, 0 0 30px $white-color,
+      0 0 45px $white-color, 0 0 65px $white-color;
+    text-shadow: 0 0 0.8em $white-color;
   }
 }
 .btn__form {
