@@ -23,8 +23,6 @@
   background-color: #000000;
   border-radius: 1em;
   outline: none;
-  box-shadow: 0 0 5px #d7cdb3, 0 0 15px #d7cdb3, 0 0 30px #d7cdb3, 0 0 50px #d7cdb3;
-  text-shadow: 0 0 0.5em #d7cdb3;
   transition: all 0.3s;
   cursor: pointer; }
   .btn:hover, .btn__form:hover {
@@ -33,6 +31,9 @@
     background-color: #000000;
     box-shadow: 0 0 5px #ffffff, 0 0 15px #ffffff, 0 0 30px #ffffff, 0 0 50px #ffffff;
     text-shadow: 0 0 0.5em #ffffff; }
+  .btn:active, .btn__form:active {
+    box-shadow: 0 0 20px #ffffff, 0 0 30px #ffffff, 0 0 45px #ffffff, 0 0 65px #ffffff;
+    text-shadow: 0 0 0.8em #ffffff; }
 
 .btn__form {
   margin-top: 0.4em;
@@ -134,7 +135,7 @@
     border-radius: 1em;
     box-shadow: 0 0 1em #ffffff; }
   @media (max-width: 400px) {
-    .band * p {
+    .band p {
       text-align: justify; } }
 
 /*seccion checkout*/
@@ -159,13 +160,6 @@
   padding: 20px;
   margin-bottom: 3em;
   box-shadow: 0px 0px 15px #ffffff; }
-
-textarea {
-  max-height: 88px; }
-
-.focus:focus {
-  outline: solid 2px #990000;
-  box-shadow: 0px 0px 20px #ffffff; }
 
 /*seccion tour*/
 .city, .date {
@@ -302,13 +296,19 @@ textarea {
     justify-content: space-around;
     gap: 3vw;
     margin-bottom: 0; }
-  .footer ul a {
-    color: rgba(255, 255, 255, 0.6);
-    text-decoration: none; }
-  .footer .subList li a:hover,
-  .footer p:hover {
-    color: #ffffff;
-    transition: all 0.3s; }
+    .footer ul .icon {
+      cursor: pointer; }
+    .footer ul .fa-facebook-f,
+    .footer ul .fa-instagram,
+    .footer ul .fa-twitter {
+      color: #999999;
+      filter: drop-shadow(0px 0px 10px #555555);
+      transition: all 300ms; }
+    .footer ul .fa-facebook-f:hover,
+    .footer ul .fa-instagram:hover,
+    .footer ul .fa-twitter:hover {
+      color: #ffffff;
+      filter: drop-shadow(0px 0px 10px #FFFFFF); }
   @media (max-width: 767px) {
     .footer {
       font-size: 0.75em;
