@@ -1,4 +1,50 @@
 /*comienzo seccion banda*/
+.title {
+  text-align: center;
+  color: #ffffff;
+  font-size: 6.25em;
+  text-shadow: 0 0 5px #d7cdb3, 0 0 15px #d7cdb3, 0 0 30px #d7cdb3,
+    0 0 50px #d7cdb3;
+  ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5vw;
+
+    li {
+      font-family: "Poiret One", cursive;
+      font-weight: 900;
+      &:nth-child(odd) {
+        transform-origin: left top;
+        animation: Odd 1.5s linear;
+      }
+      &:nth-child(even) {
+        transform-origin: left top;
+        animation: Even 1.5s linear;
+      }
+    }
+    @keyframes Odd {
+      from {
+        transform: translateY(60px);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0px);
+        opacity: 1;
+      }
+    }
+    @keyframes Even {
+      from {
+        transform: translateY(-60px);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0px);
+        opacity: 1;
+      }
+    }
+  }
+}
 .band {
   display: flex;
   gap: 0.5em;
@@ -7,10 +53,10 @@
     border-radius: 1em;
     box-shadow: 0 0 1em $white-color;
   }
+}
+.bandInfo {
   p {
-    @include responsive(smartphone) {
-      text-align: justify;
-    }
+    text-align: justify;
   }
 }
 /*seccion checkout*/

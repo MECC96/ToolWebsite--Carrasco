@@ -84,14 +84,27 @@
   justify-content: center;
   align-items: center; }
   .gif h1 {
-    text-align: center;
+    display: flex;
     font-family: "Poiret One", cursive;
-    font-weight: 900;
-    font-size: 6.25em;
-    letter-spacing: 6vw;
-    text-transform: uppercase;
     color: #ffffff;
+    font-size: 6.25em;
     text-shadow: 0 0 5px #d7cdb3, 0 0 15px #d7cdb3, 0 0 30px #d7cdb3, 0 0 50px #d7cdb3; }
+    .gif h1 ul {
+      display: flex;
+      gap: 5vw; }
+      .gif h1 ul li {
+        font-family: "Poiret One", cursive;
+        font-weight: 900;
+        animation: fade-in 1.5s linear; }
+
+@keyframes fade-in {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
+      @media (max-width: 400px) {
+        .gif h1 ul {
+          font-size: 4em; } }
 
 /*seccion navbar*/
 .navbar {
@@ -111,6 +124,10 @@
   .navbar .logo {
     width: 12em;
     height: 6em; }
+    @media (max-width: 767px) {
+      .navbar .logo {
+        width: 8em;
+        height: 4em; } }
   .navbar-nav {
     align-items: center; }
   .navbar-nav > .nav-item > .nav-link {
@@ -128,15 +145,51 @@
 
 /*fin seccion navbar*/
 /*comienzo seccion banda*/
+.title {
+  text-align: center;
+  color: #ffffff;
+  font-size: 6.25em;
+  text-shadow: 0 0 5px #d7cdb3, 0 0 15px #d7cdb3, 0 0 30px #d7cdb3, 0 0 50px #d7cdb3; }
+  .title ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5vw; }
+    .title ul li {
+      font-family: "Poiret One", cursive;
+      font-weight: 900; }
+      .title ul li:nth-child(odd) {
+        transform-origin: left top;
+        animation: Odd 1.5s linear; }
+      .title ul li:nth-child(even) {
+        transform-origin: left top;
+        animation: Even 1.5s linear; }
+
+@keyframes Odd {
+  from {
+    transform: translateY(60px);
+    opacity: 0; }
+  to {
+    transform: translateY(0px);
+    opacity: 1; } }
+
+@keyframes Even {
+  from {
+    transform: translateY(-60px);
+    opacity: 0; }
+  to {
+    transform: translateY(0px);
+    opacity: 1; } }
+
 .band {
   display: flex;
   gap: 0.5em; }
   .band img {
     border-radius: 1em;
     box-shadow: 0 0 1em #ffffff; }
-  @media (max-width: 400px) {
-    .band p {
-      text-align: justify; } }
+
+.bandInfo p {
+  text-align: justify; }
 
 /*seccion checkout*/
 .iframe {
@@ -175,6 +228,12 @@
   .city h2,
   .date h2 {
     text-shadow: 0 0 5px #000000, 0 0 15px #000000, 0 0 30px #000000, 0 0 50px #000000; }
+
+.date {
+  background-image: url(../images/black-concrete-wall.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat; }
 
 .flagGB, .flagIR, .flagFR {
   background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTAlm9ol2RhbVfuuqE8o5tyysEI0ykFodKdTg&usqp=CAU);
@@ -241,6 +300,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    text-align: center;
     width: 300px;
     height: 300px;
     background: #000;

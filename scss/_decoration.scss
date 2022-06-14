@@ -70,14 +70,31 @@
   align-items: center;
 
   h1 {
-    text-align: center;
+    display: flex;
     font-family: $main-font;
-    font-weight: 900;
-    font-size: 6.25em;
-    letter-spacing: 6vw;
-    text-transform: uppercase;
     color: $white-color;
+    font-size: 6.25em;
     text-shadow: 0 0 5px $shadow-color, 0 0 15px $shadow-color,
       0 0 30px $shadow-color, 0 0 50px $shadow-color;
+    ul {
+      display: flex;
+      gap: 5vw;
+      li {
+        font-family: "Poiret One", cursive;
+        font-weight: 900;
+        animation: fade-in 1.5s linear;
+        @keyframes fade-in {
+          from {
+            opacity: 0;
+          }
+          to {
+            opacity: 1;
+          }
+        }
+      }
+      @include responsive(smartphone) {
+        font-size: 4em;
+      }
+    }
   }
 }

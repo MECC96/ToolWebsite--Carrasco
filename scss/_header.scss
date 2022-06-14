@@ -19,6 +19,10 @@
   .logo {
     width: 12em;
     height: 6em;
+    @include responsive(tablet) {
+      width: 8em;
+      height: 4em;
+    }
   }
 
   &-nav {

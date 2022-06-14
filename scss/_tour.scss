@@ -17,6 +17,10 @@
 }
 .date {
   @extend .city;
+  background-image: url(../images/black-concrete-wall.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 .flagGB {
   background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTAlm9ol2RhbVfuuqE8o5tyysEI0ykFodKdTg&usqp=CAU);

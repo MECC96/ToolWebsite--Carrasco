@@ -15,7 +15,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Exo+2&family=Poiret+One&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css"
     integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VF jmqGmIYY4HV4d3Gp2irvfcrp" crossorigin="anonymous">
-  <script src="https://kit.fontawesome.com/4070af5cc1.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
   <title>TOOL-Galery</title>
 </head>
 
@@ -54,97 +54,106 @@
   </header>
   <!--gif presentacion-->
   <div class="container-fluid gif">
-    <h1>GALERY</h1>
+    <h1>
+      <ul>
+        <li>G</li>
+        <li>A</li>
+        <li>L</li>
+        <li>E</li>
+        <li>R</li>
+        <li>Y</li>
+      </ul>
+    </h1>
   </div>
   <main class="container-fluid main justify-content-center">
     <!--Etiqueta semantica-->
-    <div class="section__title">
+    <div class="section__title" data-aos="fade-down" data-aos-once="true">
       <h2>Pictures!</h2>
     </div>
     <div class="row row-cols-xs-2 row-cols-sm-2 row-cols-md-2 row-cols-lg-3 row-cols-xxl-4 grid justify-content-center">
       <!--Div contenedor de todas las imágenes-->
       <div class="gridImg g-col-4">
         <!--Div contenedor de una imagen-->
-        <img src="../images/tool-photo (1).jpg" alt="Imagen de la banda">
+        <img src="../images/tool-photo (1).jpg" alt="Tool foto 2019">
         <div class="infoImg">
-          <p>p</p>
+          <p>'Fear Inoculum' | 2019</p>
         </div>
       </div>
       <div class="gridImg g-col-4">
         <!--Div contenedor de una imagen-->
-        <img src="../images/Tool-Band-Picture (1).jpg" alt="Imagen de la banda">
+        <img src="../images/Tool-Band-Picture (1).jpg" alt="tool foto 2002">
         <div class="infoImg">
-          <p>p</p>
+          <p>Chicago. 'Lateralus' era | 2002</p>
         </div>
       </div>
       <div class="gridImg g-col-4">
         <!--Div contenedor de una imagen-->
         <img src="../images/tool-black-white (2).jpg" alt="Imagen de la banda">
         <div class="infoImg">
-          <p>p</p>
+          <p>Los Angeles | 1991</p>
         </div>
       </div>
       <div class="gridImg g-col-4">
         <!--Div contenedor de una imagen-->
-        <img src="../images/toolband-1 (1).jpg" alt="Imagen de la banda">
+        <img src="../images/toolband-1 (1).jpg" alt="Tool metalhammeruk cover">
         <div class="infoImg">
-          <p>p</p>
+          <p>Tool Metal Hammer UK magazine cover | 2019</p>
         </div>
       </div>
       <div class="gridImg g-col-4">
         <!--Div contenedor de una imagen-->
-        <img src="../images/tool-band-2.jpg" alt="Imagen de la banda">
+        <img src="../images/tool-band-2.jpg" alt="Tool foto 2006">
         <div class="infoImg">
-          <p>p</p>
+          <p>Los Angeles. 'Lateralus' era | 2006</p>
         </div>
       </div>
       <div class="gridImg g-col-4">
         <!--Div contenedor de una imagen-->
-        <img src="../images/tool-live-1.jpg" alt="Imagen de la banda">
+        <img src="../images/tool-live-1.jpg" alt="Tool foto 2010">
         <div class="infoImg">
-          <p>p</p>
+          <p>Seattle, United State | 2010</p>
         </div>
       </div>
       <div class="gridImg g-col-4">
         <!--Div contenedor de una imagen-->
-        <img src="../images/maynard-james-keenan.jpg" alt="Imagen de la banda">
+        <img src="../images/maynard-james-keenan.jpg" alt="Maynard James Keenan">
         <div class="infoImg">
-          <p>p</p>
+          <p>Copenhell Festival. Copenhague, Denmark | 2019</p>
         </div>
       </div>
       <div class="gridImg g-col-4">
         <!--Div contenedor de una imagen-->
-        <img src="../images/tool-band-black-white.jpg" alt="Imagen de la banda">
+        <img src="../images/tool-band-black-white.jpg" alt="Tool foto 1996">
         <div class="infoImg">
-          <p>p</p>
+          <p>'Ænima' | 1996</p>
         </div>
       </div>
       <div class="gridImg g-col-4">
         <!--Div contenedor de una imagen-->
-        <img src="../images/tool-live-2.jpg" alt="Imagen de la banda">
+        <img src="../images/tool-live-2.jpg" alt="Tool foto 2007">
         <div class="infoImg">
-          <p>p</p>
+          <p>Tool live in Spokane | 2007</p>
         </div>
       </div>
       <div class="gridImg g-col-4">
         <!--Div contenedor de una imagen-->
-        <img src="../images/tool-band-bbq.jpg" alt="Imagen de la banda">
+        <img src="../images/tool-band-bbq.jpg" alt="Rool foto 2003">
         <div class="infoImg">
-          <p>p</p>
+          <p>Texas. 'Lateralus' era | 2003</p>
         </div>
       </div>
       <div class="gridImg g-col-4">
         <!--Div contenedor de una imagen-->
         <img src="../images/tool-live-3.jpg" alt="Imagen de la banda">
         <div class="infoImg">
-          <p>p</p>
+          <p>California, United State | 2017</p>
         </div>
       </div>
       <div class="gridImg g-col-4">
         <!--Div contenedor de una imagen-->
-        <img src="../images/tool-band-3.jpg" alt="Imagen de la banda">
+        <img src="../images/tool-band-3.jpg" alt="Tool foto 2019">
         <div class="infoImg">
-          <p>p</p>
+          <p>'Fear Inoculum' | 2019</p>
         </div>
       </div>
     </div>
@@ -170,9 +179,14 @@
       </li>
     </ul>
   </footer>
+  <script src="https://kit.fontawesome.com/4070af5cc1.js" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
     crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
 </body>
 
 </html>

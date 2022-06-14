@@ -16,7 +16,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Exo+2&family=Poiret+One&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css"
     integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VF jmqGmIYY4HV4d3Gp2irvfcrp" crossorigin="anonymous">
-  <script src="https://kit.fontawesome.com/4070af5cc1.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
   <title>TOOL-Merch</title>
 </head>
 
@@ -55,14 +55,23 @@
   </header>
   <!--gif presentacion-->
   <div class="container-fluid gif">
-    <h1>MERCH</h1>
+    <h1>
+      <ul>
+        <li>M</li>
+        <li>E</li>
+        <li>R</li>
+        <li>C</li>
+        <li>H</li>
+      </ul>
+    </h1>
   </div>
   <main class="container-fluid main">
     <!--Etiqueta semantica-->
-    <div class="section__title">
+    <div class="section__title" data-aos="fade-down" data-aos-once="true">
       <h2>New Arrivals!</h2>
     </div>
-    <div class="flex__merch row row-cols-xs-2 row-cols-sm-2 row-cols-md-3 row-cols-xxl-4 grid justify-content-center">
+    <div class="flex__merch row row-cols-xs-2 row-cols-sm-2 row-cols-md-3 row-cols-xxl-4 grid justify-content-center"
+      data-aos="fade-up" data-aos-once="true">
       <!--Div contenedor de las secciones de merch-->
       <div class="div__merch mb-5">
         <!--Div contenedor de la ropa, descripcion y precio-->
@@ -192,9 +201,14 @@
       </li>
     </ul>
   </footer>
+  <script src="https://kit.fontawesome.com/4070af5cc1.js" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
     crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
 </body>
 
 </html>
