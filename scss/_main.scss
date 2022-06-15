@@ -3,17 +3,22 @@
   text-align: center;
   color: #ffffff;
   font-size: 6.25em;
+  font-weight: 900;
   text-shadow: 0 0 5px #d7cdb3, 0 0 15px #d7cdb3, 0 0 30px #d7cdb3,
     0 0 50px #d7cdb3;
+
+  @include responsive(tablet) {
+    font-size: 4em;
+  }
   ul {
+    padding: 0;
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 5vw;
+    gap: 4.5vw;
 
     li {
       font-family: "Poiret One", cursive;
-      font-weight: 900;
       &:nth-child(odd) {
         transform-origin: left top;
         animation: Odd 1.5s linear;
@@ -48,7 +53,9 @@
 .band {
   display: flex;
   gap: 0.5em;
-
+  p {
+    text-align: center;
+  }
   img {
     border-radius: 1em;
     box-shadow: 0 0 1em $white-color;

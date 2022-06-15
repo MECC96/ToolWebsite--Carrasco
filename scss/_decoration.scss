@@ -52,6 +52,7 @@
 .main {
   background-image: url(../images/fondo.jpg);
   background-position: center;
+  background-size: 100vw;
   color: $white-color;
   background-color: $black-color;
   width: 100%;
@@ -74,15 +75,20 @@
     font-family: $main-font;
     color: $white-color;
     font-size: 6.25em;
+    font-weight: 900;
     text-shadow: 0 0 5px $shadow-color, 0 0 15px $shadow-color,
       0 0 30px $shadow-color, 0 0 50px $shadow-color;
+
+    @include responsive(tablet) {
+      font-size: 4em;
+    }
+
     ul {
-      display: flex;
-      gap: 5vw;
       padding: 0;
+      display: flex;
+      gap: 4.5vw;
       li {
         font-family: "Poiret One", cursive;
-        font-weight: 900;
         animation: fade-in 1.5s linear;
         @keyframes fade-in {
           from {
@@ -93,9 +99,6 @@
           }
         }
       }
-    }
-    @include responsive(smartphone) {
-      font-size: 4em;
     }
   }
 }

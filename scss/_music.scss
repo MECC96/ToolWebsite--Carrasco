@@ -1,38 +1,48 @@
 /*seccion music*/
 .grid__music {
   gap: 5em;
+  .d-flex {
+    @include responsive(smartphone) {
+      justify-content: space-around;
+    }
+  }
 }
 .disc {
-  margin-right: 5em;
-  width: 95%;
-  gap: 5em;
+  width: 90%;
+  margin: auto 5%;
+  column-gap: 5em;
 
-  .seccion__iframe iframe {
-    width: 18.5em;
-    height: 18.5em;
+  .seccion__iframe {
+    display: flex;
+    width: max-content;
+    height: max-content;
     border-radius: 12px;
     box-shadow: 0 0 15px $white-color;
 
-    @include responsive(tablet) {
-      width: 15em;
-      height: 15em;
-    }
-    @include responsive(smartphone) {
-      width: 14em;
-      height: 14em;
+    iframe {
+      width: 18.5em;
+      height: 18.5em;
+      border-radius: 12px;
+      @include responsive(tablet) {
+        width: 15em;
+        height: 15em;
+      }
     }
   }
 
-  .seccion__cover img {
-    width: 18.5em;
-    height: 18.5em;
-    box-shadow: 0px 0px 15px $white-color;
+  .seccion__cover {
+    width: fit-content;
+    height: fit-content;
     border-radius: 12px;
-
+    box-shadow: 0px 0px 15px $white-color;
+    img {
+      width: 18.5em;
+      height: 18.5em;
+      border-radius: 12px;
+    }
     @include responsive(tablet) {
       display: none;
     }
   }
 }
-
 /*fin seccion music*/

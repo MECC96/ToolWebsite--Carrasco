@@ -1,6 +1,6 @@
 //mixin responsive
 $tablet: 767px;
-$smartphone: 400px;
+$smartphone: 576px;
 @mixin responsive($medida) {
   @if $medida == tablet {
     @media (max-width: $tablet) {
