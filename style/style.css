@@ -67,6 +67,7 @@
 .main {
   background-image: url(../images/fondo.jpg);
   background-position: center;
+  background-size: 100vw;
   color: #ffffff;
   background-color: #000000;
   width: 100%;
@@ -88,14 +89,17 @@
     font-family: "Poiret One", cursive;
     color: #ffffff;
     font-size: 6.25em;
+    font-weight: 900;
     text-shadow: 0 0 5px #d7cdb3, 0 0 15px #d7cdb3, 0 0 30px #d7cdb3, 0 0 50px #d7cdb3; }
+    @media (max-width: 767px) {
+      .gif h1 {
+        font-size: 4em; } }
     .gif h1 ul {
+      padding: 0;
       display: flex;
-      gap: 5vw;
-      padding: 0; }
+      gap: 4.5vw; }
       .gif h1 ul li {
         font-family: "Poiret One", cursive;
-        font-weight: 900;
         animation: fade-in 1.5s linear; }
 
 @keyframes fade-in {
@@ -103,9 +107,6 @@
     opacity: 0; }
   to {
     opacity: 1; } }
-    @media (max-width: 400px) {
-      .gif h1 {
-        font-size: 4em; } }
 
 /*seccion navbar*/
 .navbar {
@@ -133,7 +134,7 @@
     align-items: center; }
   .navbar-nav > .nav-item > .nav-link {
     font-family: "Poiret One", cursive;
-    padding: 0.5em 2em;
+    padding: 0.35em 2em;
     color: rgba(255, 255, 255, 0.3);
     font-size: 1.2em;
     font-weight: bolder; }
@@ -150,15 +151,19 @@
   text-align: center;
   color: #ffffff;
   font-size: 6.25em;
+  font-weight: 900;
   text-shadow: 0 0 5px #d7cdb3, 0 0 15px #d7cdb3, 0 0 30px #d7cdb3, 0 0 50px #d7cdb3; }
+  @media (max-width: 767px) {
+    .title {
+      font-size: 4em; } }
   .title ul {
+    padding: 0;
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 5vw; }
+    gap: 4.5vw; }
     .title ul li {
-      font-family: "Poiret One", cursive;
-      font-weight: 900; }
+      font-family: "Poiret One", cursive; }
       .title ul li:nth-child(odd) {
         transform-origin: left top;
         animation: Odd 1.5s linear; }
@@ -185,6 +190,8 @@
 .band {
   display: flex;
   gap: 0.5em; }
+  .band p {
+    text-align: center; }
   .band img {
     border-radius: 1em;
     box-shadow: 0 0 1em #ffffff; }
@@ -251,31 +258,39 @@
 /*seccion music*/
 .grid__music {
   gap: 5em; }
+  @media (max-width: 576px) {
+    .grid__music .d-flex {
+      justify-content: space-around; } }
 
 .disc {
-  margin-right: 5em;
-  width: 95%;
-  gap: 5em; }
-  .disc .seccion__iframe iframe {
-    width: 18.5em;
-    height: 18.5em;
+  width: 90%;
+  margin: auto 5%;
+  column-gap: 5em; }
+  .disc .seccion__iframe {
+    display: flex;
+    width: max-content;
+    height: max-content;
     border-radius: 12px;
     box-shadow: 0 0 15px #ffffff; }
+    .disc .seccion__iframe iframe {
+      width: 18.5em;
+      height: 18.5em;
+      border-radius: 12px; }
+      @media (max-width: 767px) {
+        .disc .seccion__iframe iframe {
+          width: 15em;
+          height: 15em; } }
+  .disc .seccion__cover {
+    width: fit-content;
+    height: fit-content;
+    border-radius: 12px;
+    box-shadow: 0px 0px 15px #ffffff; }
+    .disc .seccion__cover img {
+      width: 18.5em;
+      height: 18.5em;
+      border-radius: 12px; }
     @media (max-width: 767px) {
-      .disc .seccion__iframe iframe {
-        width: 15em;
-        height: 15em; } }
-    @media (max-width: 400px) {
-      .disc .seccion__iframe iframe {
-        width: 14em;
-        height: 14em; } }
-  .disc .seccion__cover img {
-    width: 18.5em;
-    height: 18.5em;
-    box-shadow: 0px 0px 15px #ffffff;
-    border-radius: 12px; }
-    @media (max-width: 767px) {
-      .disc .seccion__cover img {
+      .disc .seccion__cover {
         display: none; } }
 
 /*fin seccion music*/
@@ -292,9 +307,17 @@
   border-radius: 0.5em;
   box-shadow: 0 0 1em #ffffff;
   padding: 1em; }
+  @media (max-width: 576px) {
+    .gridImg {
+      width: 250px;
+      height: 250px; } }
   .gridImg img {
     position: absolute;
     border-radius: 0.5em; }
+    @media (max-width: 576px) {
+      .gridImg img {
+        width: 200px;
+        height: 200px; } }
   .gridImg .infoImg {
     font-size: 30px;
     color: #ffffff;
@@ -309,6 +332,11 @@
     z-index: 1;
     transition: all 300ms;
     cursor: pointer; }
+    @media (max-width: 576px) {
+      .gridImg .infoImg {
+        width: 200px;
+        height: 200px;
+        font-size: 20px; } }
   .gridImg .infoImg:hover {
     opacity: 0.7; }
 
