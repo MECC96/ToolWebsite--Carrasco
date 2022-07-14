@@ -76,15 +76,19 @@
 
 /*comienzo gif*/
 .gif {
+  width: 100%;
   height: 100vh;
-  background-image: url(../images/Humo.gif);
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center; }
+  .gif video {
+    position: absolute;
+    width: 100%;
+    height: 100vh; }
   .gif h1 {
+    position: absolute;
+    z-index: 1;
     display: flex;
     font-family: "Poiret One", cursive;
     color: #ffffff;
