@@ -147,7 +147,8 @@
     font-size: 1.2em;
     font-weight: bolder; }
   .navbar-toggler {
-    border: none; }
+    border: none;
+    margin-right: 0.75rem; }
   @media (max-width: 767px) {
     .navbar {
       opacity: 1;

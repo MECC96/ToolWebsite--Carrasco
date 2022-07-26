@@ -39,6 +39,7 @@
 
   &-toggler {
     border: none;
+    margin-right: 0.75rem;
   }
 
   @include responsive(tablet) {
