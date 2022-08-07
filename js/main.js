@@ -104,7 +104,7 @@ function agregarAlCarrito(prodId) {
 //   }
 // }
 
-// //funcion para imprimir los articulos comprados
+//funcion para imprimir los articulos comprados
 // function imprimirTicket() {
 //   carrito.forEach((carritoFinal) => {
 //     console.log(
@@ -153,5 +153,5 @@ function agregarAlCarrito(prodId) {
 // do {
 //   ingresarArtículo();
 // } while (answer);
-// //Funncion que muestra los productos, unidades, monto por cada articulo y monto total de la compra por consola
+// //Funcion que muestra los productos, unidades, monto por cada articulo y monto total de la compra por consola
 // imprimirTicket();
