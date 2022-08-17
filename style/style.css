@@ -12,7 +12,8 @@
   --bs-gutter-x: 0;
   gap: 3em; }
 
-.btn, .btn__form {
+.btn, .btn__form, .units .btn__menos,
+.units .btn__mas {
   border: 0.25em solid #d7cdb3;
   padding: 0.75em 2em;
   color: #d7cdb3;
@@ -25,13 +26,15 @@
   outline: none;
   transition: all 0.3s;
   cursor: pointer; }
-  .btn:hover, .btn__form:hover {
+  .btn:hover, .btn__form:hover, .units .btn__menos:hover,
+  .units .btn__mas:hover {
     color: #ffffff;
     border: 0.25em solid #ffffff;
     background-color: #000000;
     box-shadow: 0 0 5px #ffffff, 0 0 15px #ffffff, 0 0 30px #ffffff, 0 0 50px #ffffff;
     text-shadow: 0 0 0.5em #ffffff; }
-  .btn:active, .btn__form:active {
+  .btn:active, .btn__form:active, .units .btn__menos:active,
+  .units .btn__mas:active {
     box-shadow: 0 0 20px #ffffff, 0 0 30px #ffffff, 0 0 45px #ffffff, 0 0 65px #ffffff;
     text-shadow: 0 0 0.8em #ffffff; }
 
@@ -115,6 +118,24 @@
 .container-fluid {
   padding-left: 0;
   padding-right: 0; }
+
+.contenedor-mensaje {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 1em;
+  width: 30%;
+  height: 20%;
+  background: linear-gradient(90deg, #630302, #990000, #630302);
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto; }
+  .contenedor-mensaje p {
+    color: #ffffff; }
 
 /*seccion navbar*/
 .navbar {
@@ -375,6 +396,37 @@
   .div__merch p {
     margin-top: 10px;
     font-size: 25px; }
+
+.table {
+  margin-bottom: 0; }
+
+.tbody .td {
+  color: #d7cdb3;
+  background-color: rgba(0, 0, 0, 0.8);
+  vertical-align: middle; }
+
+.tbody .tdImg {
+  width: fit-content;
+  padding: 5px;
+  border-radius: 7px;
+  cursor: pointer; }
+
+.tbody .tdImg:hover {
+  background-color: rgba(255, 0, 0, 0.6); }
+
+.tbody img {
+  border-radius: 2px;
+  width: 75px; }
+
+.units .btn__menos,
+.units .btn__mas {
+  width: 2em;
+  height: 2em;
+  text-align: center;
+  font-family: monospace;
+  border-radius: 50%;
+  cursor: pointer;
+  padding: 0px 8px; }
 
 /*fin seccion merch*/
 /*comienzo de footer*/
