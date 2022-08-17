@@ -111,3 +111,28 @@
   padding-left: 0;
   padding-right: 0;
 }
+.contenedor-mensaje {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 1em;
+  width: 30%;
+  height: 20%;
+  background: linear-gradient(
+    90deg,
+    $gradient-color,
+    $secondary-gradient-color,
+    $gradient-color
+  );
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+
+  p {
+    color: $white-color;
+  }
+}

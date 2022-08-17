@@ -35,4 +35,40 @@
     font-size: 25px;
   }
 }
+.table {
+  margin-bottom: 0;
+}
+.tbody {
+  .td {
+    color: $shadow-color;
+    background-color: rgba(0, 0, 0, 0.8);
+    vertical-align: middle;
+  }
+  .tdImg {
+    width: fit-content;
+    padding: 5px;
+    border-radius: 7px;
+    cursor: pointer;
+  }
+  .tdImg:hover {
+    background-color: rgba(255, 0, 0, 0.6);
+  }
+  img {
+    border-radius: 2px;
+    width: 75px;
+  }
+}
+.units {
+  .btn__menos,
+  .btn__mas {
+    @extend .btn;
+    width: 2em;
+    height: 2em;
+    text-align: center;
+    font-family: monospace;
+    border-radius: 50%;
+    cursor: pointer;
+    padding: 0px 8px;
+  }
+}
 /*fin seccion merch*/
