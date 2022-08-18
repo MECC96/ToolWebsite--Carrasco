@@ -83,12 +83,6 @@ function crearItemsCarrito() {
             </td>
         </tr>
     `;
-
-    //const menos = document.getElementById(`menos${item.id}`);
-    //const mas = document.getElementById(`mas${item.id}`);
-
-    //menos.addEventListener("click", cambiarUnidades("menos", `${item.id}`));
-    //mas.addEventListener("click", cambiarUnidades("mas", `${item.id}`));
   });
 }
 function cambiarUnidades(accion, id) {
