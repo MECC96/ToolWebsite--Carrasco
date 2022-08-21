@@ -37,17 +37,17 @@ const crearTarjeta = () => {
 };
 crearTarjeta(); //se llama a la funcion que crea los items del merch
 
-let carrito = JSON.parse(localStorage.getItem("carrito")) || []; //aca el carrito toma la info que este en local storage o en su defecto si es un array vacio
+let carrito = JSON.parse(localStorage.getItem("carrito")) || []; //aca el carrito toma la info que este en local storage o en su defecto si es un array vacio. Usando operador OR.
 actualizarCarrito();
 
 //Funcion que agrega elementos al carrito
 function agregarAlCarrito(prodId) {
-  if (carrito.some((item) => item.id === prodId)) {
-    alert("¡Este producto ya esta en el carrito!");
-  } else {
+  const existe = carrito.some((item) => item.id === prodId);
+  existe ? alert("¡Este producto ya esta en el carrito!") : pushearItem(); //Usando operador TERNARIO
+  function pushearItem() {
     const item = productos.find((prod) => prod.id === prodId);
     carrito.push({
-      ...item, //con esto copio todas las partes que contiene mi item y le agrego una nueva propiedad que es Unidades con el valor de 1
+      ...item, //con esto copio todas las partes que contiene mi item y le agrego una nueva propiedad que es Unidades con el valor de 1. Usando operador SPREAD.
       unidades: 1,
     });
     actualizarCarrito();
@@ -104,7 +104,7 @@ function cambiarUnidades(accion, id) {
     }
 
     return {
-      ...item, //con esto copio todas las partes que contiene mi item y le agrego una nueva propiedad que es Unidades pero modificadas
+      ...item, //con esto copio todas las partes que contiene mi item y le agrego una nueva propiedad que es Unidades pero modificadas. Usando operador SPREAD.
       unidades,
     };
   });
