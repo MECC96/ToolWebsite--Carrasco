@@ -7,6 +7,7 @@ const unidadesTotales = document.getElementById("unidadesTotales");
 //Crea una tarjeta por cada producto del stock
 const crearTarjeta = () => {
   productos.forEach((producto) => {
+    const { imagen, nombre, id, precio } = producto;
     //Recorre el array de productos para crear una tarjeta por cada producto
     const div = document.createElement("div");
     div.classList.add("div__merch", "mb-5");
@@ -14,24 +15,24 @@ const crearTarjeta = () => {
         <!--Div contenedor de la ropa, descripcion y precio-->
         <div>
           <!--Div contenedor de la imagen-->
-          <img src=${producto.imagen} alt="${producto.nombre}">
+          <img src=${imagen} alt="${nombre}">
         </div>
         <div>
           <!--Div contenedor de la descripcion y precio-->
-          <p><span>$ ${producto.precio}</span></p>
+          <p><span>$ ${precio}</span></p>
           <!--Precio-->
           <div>
             <!--Descripcion-->
-            <p>${producto.nombre}</p>
+            <p>${nombre}</p>
           </div>
         </div>
-          <button id="btn${producto.id}" class="btn">Buy</button>
+          <button id="btn${id}" class="btn">Buy</button>
   `;
     contenedorProductos.appendChild(div);
 
-    const botonBuy = document.getElementById(`btn${producto.id}`); //boton que agrega al carrito cuando es activado
+    const botonBuy = document.getElementById(`btn${id}`); //boton que agrega al carrito cuando es activado
     botonBuy.addEventListener("click", () => {
-      agregarAlCarrito(producto.id);
+      agregarAlCarrito(id);
     });
   });
 };
