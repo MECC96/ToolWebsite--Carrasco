@@ -58,20 +58,21 @@ function agregarAlCarrito(prodId) {
 function crearItemsCarrito() {
   tbody.innerHTML = ``;
   carrito.forEach((item) => {
+    const { imagen, nombre, id, precio, unidades } = item;
     tbody.innerHTML += `
           <tr>
             <td class="d-flex justify-content-center td"> 
-              <div class="tdImg" onclick="quitarItemCarrito(${item.id})"> <!-- Aca llamo a la funcion quitar carrito. la cual recibe por parametro el id del producto que se quiere quitar-->
-                <img src=${item.imagen} alt="${item.nombre}"> 
-                ${item.nombre}
+              <div class="tdImg" onclick="quitarItemCarrito(${id})"> <!-- Aca llamo a la funcion quitar carrito. la cual recibe por parametro el id del producto que se quiere quitar-->
+                <img src=${imagen} alt="${nombre}"> 
+                ${nombre}
               </div>
             </td>
-            <td class="text-center td">$${item.precio}</td>
+            <td class="text-center td">$${precio}</td>
             <td class="td">
               <div class="units d-flex justify-content-evenly">
-                <div id="menos${item.id}" class="btn__menos"  onclick="cambiarUnidades('menos', ${item.id})">-</div><!-- Aca llamo a la funcion cambiar unidades. la cual recibe por parametro el id del producto y la accion de restar unidades-->
-                <div class="units__number">${item.unidades}</div>
-                <div id="mas${item.id}" class="btn__mas"  onclick="cambiarUnidades('mas', ${item.id})">+</div><!-- Aca llamo a la funcion cambiar unidades. la cual recibe por parametro el id del producto y la accion de sumar unidades-->
+                <div id="menos${id}" class="btn__menos"  onclick="cambiarUnidades('menos', ${id})">-</div><!-- Aca llamo a la funcion cambiar unidades. la cual recibe por parametro el id del producto y la accion de restar unidades-->
+                <div class="units__number">${unidades}</div>
+                <div id="mas${id}" class="btn__mas"  onclick="cambiarUnidades('mas', ${id})">+</div><!-- Aca llamo a la funcion cambiar unidades. la cual recibe por parametro el id del producto y la accion de sumar unidades-->
               </div>
             </td>
         </tr>
