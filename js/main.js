@@ -26,7 +26,7 @@ const crearTarjeta = () => {
             <p>${nombre}</p>
           </div>
         </div>
-          <button id="btn${id}" class="btn">Buy</button>
+          <button id="btn${id}" class="btn">Add</button>
   `;
     contenedorProductos.appendChild(div);
 
@@ -44,12 +44,30 @@ actualizarCarrito();
 //Funcion que agrega elementos al carrito
 function agregarAlCarrito(prodId) {
   const existe = carrito.some((item) => item.id === prodId);
-  existe ? alert("¡Este producto ya esta en el carrito!") : pushearItem(); //Usando operador TERNARIO
+  existe ? crearAlerta() : pushearItem(); //Usando operador TERNARIO
+  function crearAlerta() {
+    swal.fire({
+      title: `¡Este producto ya esta en el carrito!`,
+      icon: `warning`,
+      position: `top`,
+      width: `20%`,
+      color: `#d7cdb3`,
+      background: `#222`,
+    });
+  }
   function pushearItem() {
     const item = productos.find((prod) => prod.id === prodId);
     carrito.push({
       ...item, //con esto copio todas las partes que contiene mi item y le agrego una nueva propiedad que es Unidades con el valor de 1. Usando operador SPREAD.
       unidades: 1,
+    });
+    swal.fire({
+      title: `¡Agregaste ${item.nombre} al carrito!`,
+      icon: `success`,
+      position: `top`,
+      width: `25%`,
+      color: `#d7cdb3`,
+      background: `#222`,
     });
     actualizarCarrito();
   }
@@ -62,7 +80,7 @@ function crearItemsCarrito() {
     tbody.innerHTML += `
           <tr>
             <td class="d-flex justify-content-center td"> 
-              <div class="tdImg" onclick="quitarItemCarrito(${id})"> <!-- Aca llamo a la funcion quitar carrito. la cual recibe por parametro el id del producto que se quiere quitar-->
+              <div class="tdImg" onclick = "quitarItemCarrito(${id})"> <!-- Aca llamo a la funcion quitar carrito. la cual recibe por parametro el id del producto que se quiere quitar-->
                 <img src=${imagen} alt="${nombre}"> 
                 ${nombre}
               </div>
@@ -88,9 +106,31 @@ function actualizarCarrito() {
 }
 //Funcion que quita al elemento seleccionado
 function quitarItemCarrito(id) {
-  carrito = carrito.filter((item) => item.id !== id); //El carrito seria un nuevo array con todos los items que cumplan con la condicion del filter
-
-  actualizarCarrito();
+  Swal.fire({
+    title: "¿Está seguro de eliminar el producto?",
+    icon: "warning",
+    showCancelButton: true,
+    confirmButtonText: "Sí",
+    cancelButtonText: "No",
+    position: `top`,
+    width: `20%`,
+    color: `#d7cdb3`,
+    background: `#222`,
+  }).then((result) => {
+    if (result.isConfirmed) {
+      carrito = carrito.filter((item) => item.id !== id); //El carrito seria un nuevo array con todos los items que cumplan con la condicion del filter
+      actualizarCarrito();
+      Swal.fire({
+        title: "Borrado!",
+        icon: "success",
+        text: "El archivo ha sido borrado",
+        position: `top`,
+        width: `20%`,
+        color: `#d7cdb3`,
+        background: `#222`,
+      });
+    }
+  });
 }
 //Funcion que suma o resta las unidades del item seleccionado. Se ejecuta en el innerHTML de la funcion crearItemsCarrito
 function cambiarUnidades(accion, id) {
@@ -126,3 +166,45 @@ function calcularTotal() {
   totalPrecio.innerText = `Total: $${precioTotal.toFixed(2)}`;
   unidadesTotales.innerText = `Total items: ${totalUnidades}`;
 }
+function confirmarCompra() {
+  const comprar = document.getElementById("comprar");
+  comprar.onclick = () => {
+    if (carrito == []) {
+      Swal.fire({
+        title: `¡No tienes productos en el carrito!`,
+        icon: `warning`,
+        position: `top`,
+        width: `20%`,
+        color: `#d7cdb3`,
+        background: `#222`,
+      });
+    } else if (carrito != []) {
+      Swal.fire({
+        title: "¿Está seguro de querer finalizar la compra?",
+        icon: "question",
+        showCancelButton: true,
+        confirmButtonText: "Sí",
+        cancelButtonText: "No",
+        position: `top`,
+        width: `20%`,
+        color: `#d7cdb3`,
+        background: `#222`,
+      }).then((result) => {
+        if (result.isConfirmed) {
+          carrito = []; //El carrito seria un nuevo array con todos los items que cumplan con la condicion del filter
+          actualizarCarrito();
+          Swal.fire({
+            title: "¡Excelente!",
+            icon: "success",
+            text: "¡Muchas gracias por su compra!",
+            position: `top`,
+            width: `20%`,
+            color: `#d7cdb3`,
+            background: `#222`,
+          });
+        }
+      });
+    }
+  };
+}
+confirmarCompra();
