@@ -169,7 +169,7 @@ function calcularTotal() {
 function confirmarCompra() {
   const comprar = document.getElementById("comprar");
   comprar.onclick = () => {
-    if (carrito == []) {
+    if (carrito.length == 0) {
       Swal.fire({
         title: `¡No tienes productos en el carrito!`,
         icon: `warning`,
