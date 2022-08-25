@@ -178,7 +178,7 @@ function confirmarCompra() {
         color: `#d7cdb3`,
         background: `#222`,
       });
-    } else if (carrito != []) {
+    } else {
       Swal.fire({
         title: "¿Está seguro de querer finalizar la compra?",
         icon: "question",
@@ -191,7 +191,7 @@ function confirmarCompra() {
         background: `#222`,
       }).then((result) => {
         if (result.isConfirmed) {
-          carrito = []; //El carrito seria un nuevo array con todos los items que cumplan con la condicion del filter
+          carrito.length = 0; //Se vacia el carrito
           actualizarCarrito();
           Swal.fire({
             title: "¡Excelente!",
