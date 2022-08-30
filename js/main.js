@@ -3,15 +3,20 @@ const contenedorProductos = document.getElementById("contenedor-productos");
 const tbody = document.getElementById("tbody");
 const totalPrecio = document.getElementById("totalPrecio");
 const unidadesTotales = document.getElementById("unidadesTotales");
-
-//Crea una tarjeta por cada producto del stock
-const crearTarjeta = () => {
-  productos.forEach((producto) => {
-    const { imagen, nombre, id, precio } = producto;
-    //Recorre el array de productos para crear una tarjeta por cada producto
-    const div = document.createElement("div");
-    div.classList.add("div__merch", "mb-5");
-    div.innerHTML += `
+let productos = [];
+//Funcion que obtiene el archivo .json y crea una tarjeta por cada producto del stock
+function obtenerJson() {
+  const URLJSON = "../productos.json";
+  fetch(URLJSON)
+    .then((resp) => resp.json())
+    .then((data) => {
+      productos = data.ropa;
+      productos.forEach((producto) => {
+        const { imagen, nombre, id, precio } = producto;
+        //Recorre el array de productos para crear una tarjeta por cada producto
+        const div = document.createElement("div");
+        div.classList.add("div__merch", "mb-5");
+        div.innerHTML += `
         <!--Div contenedor de la ropa, descripcion y precio-->
         <div>
           <!--Div contenedor de la imagen-->
@@ -28,15 +33,16 @@ const crearTarjeta = () => {
         </div>
           <button id="btn${id}" class="btn">Add</button>
   `;
-    contenedorProductos.appendChild(div);
+        contenedorProductos.appendChild(div);
 
-    const botonBuy = document.getElementById(`btn${id}`); //boton que agrega al carrito cuando es activado
-    botonBuy.addEventListener("click", () => {
-      agregarAlCarrito(id);
+        const botonBuy = document.getElementById(`btn${id}`); //boton que agrega al carrito cuando es activado
+        botonBuy.addEventListener("click", () => {
+          agregarAlCarrito(id);
+        });
+      });
     });
-  });
-};
-crearTarjeta(); //se llama a la funcion que crea los items del merch
+}
+obtenerJson();
 
 let carrito = JSON.parse(localStorage.getItem("carrito")) || []; //aca el carrito toma la info que este en local storage o en su defecto si es un array vacio. Usando operador OR.
 actualizarCarrito();
@@ -150,7 +156,6 @@ function cambiarUnidades(accion, id) {
       unidades,
     };
   });
-
   actualizarCarrito();
 }
 //funcion que calcula y muestra el total a pagar y el total de items seleccionados
