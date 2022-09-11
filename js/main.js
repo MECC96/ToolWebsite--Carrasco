@@ -24,7 +24,7 @@ function obtenerJson() {
         <!--Div contenedor de la ropa, descripcion y precio-->
         <div>
           <!--Div contenedor de la imagen-->
-          <img src=${imagen} alt="${nombre}">
+          <img src="${imagen}" alt="${nombre}">
         </div>
         <div>
           <!--Div contenedor de la descripcion y precio-->
