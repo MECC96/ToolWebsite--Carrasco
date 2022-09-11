@@ -3,35 +3,35 @@
     {
       "nombre": "Black T-Shirt",
       "precio": 29.99,
-      "imagen": "images/black-t-shirt.jpg",
+      "imagen": "../images/black-t-shirt.jpg",
       "id": 1,
       "stock": 25
     },
     {
       "nombre": "Black Sweater",
       "precio": 39.99,
-      "imagen": "images/black-sweater.jpg",
+      "imagen": "../images/black-sweater.jpg",
       "id": 2,
       "stock": 10
     },
     {
       "nombre": "White T-Shirt",
       "precio": 34.99,
-      "imagen": "images/white-t-shirt.jpg",
+      "imagen": "../images/white-t-shirt.jpg",
       "id": 3,
       "stock": 20
     },
     {
       "nombre": "Gray Sweater",
       "precio": 44.99,
-      "imagen": "images/gray-sweater.jpg",
+      "imagen": "../images/gray-sweater.jpg",
       "id": 4,
       "stock": 30
     },
     {
       "nombre": "Gray T-Shirt",
       "precio": 24.99,
-      "imagen": "images/gray-t-shirt.jpg",
+      "imagen": "../images/gray-t-shirt.jpg",
       "id": 5,
       "stock": 15
     }
