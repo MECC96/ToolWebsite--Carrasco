@@ -101,10 +101,11 @@ function crearItemsCarrito() {
     tbody.innerHTML += `
           <tr>
             <td class="d-flex justify-content-center td "> 
-              <div class="tdImg px-3"> <!-- Aca llamo a la funcion quitar carrito. la cual recibe por parametro el id del producto que se quiere quitar-->
+              <div class="tdImg px-3"> 
                 <img src="${imagen}" alt="${nombre}"> 
                 ${nombre}
               </div>
+              <!-- Aca llamo a la funcion quitar carrito. la cual recibe por parametro el id del producto que se quiere quitar-->
               <div class="icon d-flex px-3 trash align-self-center" id="trash" onclick="quitarItemCarrito(${id})">
               <i class="fa-solid fa-trash icon align-self-center"></i>
               </div>
