@@ -81,7 +81,7 @@
 .form {
   max-width: 80%;
   min-width: 50%;
-  max-height: 510px;
+  max-height: fit-content;
   border: solid 1px $black-color;
   border-radius: 1em;
   background: linear-gradient(
