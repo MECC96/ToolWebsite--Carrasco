@@ -3,7 +3,11 @@ const contenedorProductos = document.getElementById("contenedor-productos");
 const tbody = document.getElementById("tbody");
 const totalPrecio = document.getElementById("totalPrecio");
 const unidadesTotales = document.getElementById("unidadesTotales");
+//Variables
 let productos = [];
+let listaUsuarios = [];
+let precioTotal;
+let totalUnidades;
 //Funcion que obtiene el archivo .json y crea una tarjeta por cada producto del stock
 function obtenerJson() {
   const URLJSON = "../productos.json";
@@ -67,10 +71,21 @@ function agregarAlCarrito(prodId) {
       ...item, //con esto copio todas las partes que contiene mi item y le agrego una nueva propiedad que es Unidades con el valor de 1. Usando operador SPREAD.
       unidades: 1,
     });
-    swal.fire({
+
+    if (carrito.length === 1) {
+      comprar.setAttribute("data-bs-toggle", "modal");
+      comprar.setAttribute("data-bs-target", "#staticBackdrop");
+    }
+    const Toast = Swal.mixin({
+      toast: true,
+      showConfirmButton: false,
+      timer: 2000,
+      timerProgressBar: true,
+    });
+    Toast.fire({
+      icon: "success",
       title: `¡Agregaste ${item.nombre} al carrito!`,
-      icon: `success`,
-      position: `top`,
+      position: `center`,
       width: `25%`,
       color: `#d7cdb3`,
       background: `#222`,
@@ -85,13 +100,15 @@ function crearItemsCarrito() {
     const { imagen, nombre, id, precio, unidades } = item;
     tbody.innerHTML += `
           <tr>
-            <td class="d-flex justify-content-center td"> 
-              <div class="tdImg" onclick = "quitarItemCarrito(${id})"> <!-- Aca llamo a la funcion quitar carrito. la cual recibe por parametro el id del producto que se quiere quitar-->
+            <td class="d-flex justify-content-center td "> 
+              <div class="tdImg px-3"> <!-- Aca llamo a la funcion quitar carrito. la cual recibe por parametro el id del producto que se quiere quitar-->
                 <img src=${imagen} alt="${nombre}"> 
                 ${nombre}
               </div>
+              <div class="icon d-flex px-3 trash align-self-center" id="trash" onclick="quitarItemCarrito(${id})">
+              <i class="fa-solid fa-trash icon align-self-center"></i>
+              </div>
             </td>
-            <td class="text-center td">$${precio}</td>
             <td class="td">
               <div class="units d-flex justify-content-evenly">
                 <div id="menos${id}" class="btn__menos"  onclick="cambiarUnidades('menos', ${id})">-</div><!-- Aca llamo a la funcion cambiar unidades. la cual recibe por parametro el id del producto y la accion de restar unidades-->
@@ -99,6 +116,7 @@ function crearItemsCarrito() {
                 <div id="mas${id}" class="btn__mas"  onclick="cambiarUnidades('mas', ${id})">+</div><!-- Aca llamo a la funcion cambiar unidades. la cual recibe por parametro el id del producto y la accion de sumar unidades-->
               </div>
             </td>
+            <td class="text-center td">$${precio}</td>
         </tr>
     `;
   });
@@ -126,12 +144,22 @@ function quitarItemCarrito(id) {
     if (result.isConfirmed) {
       carrito = carrito.filter((item) => item.id !== id); //El carrito seria un nuevo array con todos los items que cumplan con la condicion del filter
       actualizarCarrito();
-      Swal.fire({
-        title: "Borrado!",
+      if (carrito.length === 0) {
+        document.getElementById("comprar").removeAttribute("data-bs-toggle");
+        document.getElementById("comprar").removeAttribute("data-bs-target");
+      }
+      const Toast = Swal.mixin({
+        toast: true,
+        showConfirmButton: false,
+        timer: 2000,
+        timerProgressBar: true,
+      });
+      Toast.fire({
         icon: "success",
-        text: "El archivo ha sido borrado",
-        position: `top`,
-        width: `20%`,
+        title: "Borrado!",
+        text: "El producto ha sido borrado",
+        position: `center`,
+        width: `25%`,
         color: `#d7cdb3`,
         background: `#222`,
       });
@@ -160,9 +188,8 @@ function cambiarUnidades(accion, id) {
 }
 //funcion que calcula y muestra el total a pagar y el total de items seleccionados
 function calcularTotal() {
-  let precioTotal = 0,
-    totalUnidades = 0;
-
+  precioTotal = 0;
+  totalUnidades = 0;
   carrito.forEach((item) => {
     totalUnidades += item.unidades;
     precioTotal += item.precio * item.unidades;
@@ -171,45 +198,3 @@ function calcularTotal() {
   totalPrecio.innerText = `Total: $${precioTotal.toFixed(2)}`;
   unidadesTotales.innerText = `Total items: ${totalUnidades}`;
 }
-function confirmarCompra() {
-  const comprar = document.getElementById("comprar");
-  comprar.onclick = () => {
-    if (carrito.length == 0) {
-      Swal.fire({
-        title: `¡No tienes productos en el carrito!`,
-        icon: `warning`,
-        position: `top`,
-        width: `20%`,
-        color: `#d7cdb3`,
-        background: `#222`,
-      });
-    } else {
-      Swal.fire({
-        title: "¿Está seguro de querer finalizar la compra?",
-        icon: "question",
-        showCancelButton: true,
-        confirmButtonText: "Sí",
-        cancelButtonText: "No",
-        position: `top`,
-        width: `20%`,
-        color: `#d7cdb3`,
-        background: `#222`,
-      }).then((result) => {
-        if (result.isConfirmed) {
-          carrito.length = 0; //Se vacia el carrito
-          actualizarCarrito();
-          Swal.fire({
-            title: "¡Excelente!",
-            icon: "success",
-            text: "¡Muchas gracias por su compra!",
-            position: `top`,
-            width: `20%`,
-            color: `#d7cdb3`,
-            background: `#222`,
-          });
-        }
-      });
-    }
-  };
-}
-confirmarCompra();
